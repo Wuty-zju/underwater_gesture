@@ -9,7 +9,7 @@ def get_model_batch_data_from_yaml(yaml_path):
     if os.path.exists(yaml_path):
         with open(yaml_path, 'r') as file:
             data = yaml.safe_load(file)
-        model = data.get('model', '未找到model标签')
+        model = data.get('model', '未找到model标签').split('.')[0]
         batch = data.get('batch', '未找到batch标签')
         data_value = data.get('data', '未找到data标签')
         return model, batch, data_value

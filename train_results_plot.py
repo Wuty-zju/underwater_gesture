@@ -10,14 +10,13 @@ def read_and_filter_details(data_dir, selected_train_indices):
     details_df = pd.read_csv(details_csv_path)
     return details_df[details_df['Train Index'].isin(selected_train_indices)]
 
-def assign_styles(models, random_seed=42):
-    np.random.seed(random_seed)
+def assign_styles(models):
     colors = plt.cm.tab20(np.linspace(0, 1, 20))
     markers = ['o', 's', '^', 'D', 'v', 'p', '*', 'h', '+', 'x', 'd', '|', '_', 'H', 'P']
     model_styles = {}
     color_idx = 0
     for model in models:
-        model_name = model.split('.')[0]  # 确保模型名称与数据一致
+        model_name = model.split('.')[0]  # Ensure model name is consistent with data
         model_styles[model_name] = (colors[color_idx % len(colors)], markers[color_idx % len(markers)])
         color_idx += 1
     return model_styles
@@ -105,36 +104,36 @@ def plot_combined_plots(plots_data, use_log_scale, plot_dir, line_width, legend_
         plt.savefig(plot_filename, dpi=dpi)
         plt.close()
 
-def create_plots(data_dir, plot_dir, marker_size=0.5, line_width=0.5, legend_fontsize=5, dpi=1000, log_scale_threshold=100, plot_mode=1, random_seed=42, selected_train_indices=None):
-    # 读取并筛选数据
+def create_plots(data_dir, plot_dir, marker_size=0.5, line_width=0.5, legend_fontsize=5, dpi=1000, log_scale_threshold=100, plot_mode=1, selected_train_indices=None):
+    # Read and filter data
     details_df = read_and_filter_details(data_dir, selected_train_indices)
     print("Filtered details_df:")
     print(details_df)
     
-    # 定义需要绘制的参数
+    # Define parameters to plot
     params = ['train/box_loss', 'train/cls_loss', 'train/dfl_loss',
               'metrics/precision(B)', 'metrics/recall(B)', 'metrics/mAP50(B)',
               'metrics/mAP50-95(B)', 'val/box_loss', 'val/cls_loss', 'val/dfl_loss',
               'lr/pg0', 'lr/pg1', 'lr/pg2']
     
-    # 为每个模型分配颜色和标记
-    model_styles = assign_styles(details_df['Model'].unique(), random_seed)
+    # Assign colors and markers to each model
+    model_styles = assign_styles(details_df['Model'].unique())
     
-    # 绘制单独的图
+    # Plot individual plots
     if plot_mode in [0, 2]:
         plot_individual_plots(details_df, data_dir, plot_dir, model_styles, params, marker_size, line_width, legend_fontsize, dpi)
     
-    # 收集和绘制组合图
+    # Collect and plot combined plots
     if plot_mode in [0, 1, 3]:
         plots_data, use_log_scale = collect_plot_data(details_df, data_dir, model_styles, params, log_scale_threshold)
         plot_combined_plots(plots_data, use_log_scale, plot_dir, line_width, legend_fontsize, dpi)
 
-# 定义数据目录和图像输出目录
+# Define data directory and plot output directory
 data_dir = './'
 plot_output_dir = './plots'
 
-# 定义要筛选的 train_index 数组
-selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 36, 37, 40, 41, 43, 51]
+# Define selected train indices array
+selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 36, 37, 38, 40, 41, 43, 51]
 
-# 调用函数生成图表
-create_plots(data_dir, plot_output_dir, marker_size=0.5, line_width=0.5, legend_fontsize=5, dpi=1000, plot_mode=3, random_seed=42, selected_train_indices=selected_train_indices)
+# Call function to generate plots
+create_plots(data_dir, plot_output_dir, marker_size=0.5, line_width=0.5, legend_fontsize=5, dpi=1000, plot_mode=3, selected_train_indices=selected_train_indices)
