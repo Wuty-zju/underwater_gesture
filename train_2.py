@@ -19,6 +19,7 @@ Start-Job -ScriptBlock {& 'C:/Users/wutia/Anaconda3/envs/uw_g/python.exe' 'C:/Us
 Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train_2.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_3.log" -RedirectStandardError "C:/Users/wutia/Desktop/underwater_gesture/log/train_4.log"
 Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Downloads/underwater_gesture/train_2.py" -RedirectStandardOutput "C:/Users/wutia/Downloads/underwater_gesture/log/train_3.log" -RedirectStandardError "C:/Users/wutia/Downloads/underwater_gesture/log/train_4.log"
 
+
 Get-Content -Path "C:/Users/wutia/Desktop/underwater_gesture/log/train_2.log" -Wait
 Get-Process -Name "python"
 Get-Process -Name "python" | Stop-Process
