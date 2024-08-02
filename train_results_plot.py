@@ -74,23 +74,30 @@ def collect_plot_data(details_df, data_dir, model_styles, params, log_scale_thre
                 if param in results_df.columns:
                     values = results_df[param]
                     epochs = results_df[epoch_column]
-                    plots_data[param].append((epochs, values, model_name, color, marker))
+                    plots_data[param].append((epochs, values, model_name, color, marker, row['Data']))
                     
                     if values.max() / values.min() > log_scale_threshold:
                         use_log_scale[param] = True
     
     return plots_data, use_log_scale
 
-def plot_combined_plots(plots_data, use_log_scale, plot_dir, line_width, legend_fontsize, dpi):
+def plot_combined_plots(plots_data, use_log_scale, plot_dir, dpi, legend_fontsize):
     compared_dir = os.path.join(plot_dir, 'compared')
     os.makedirs(compared_dir, exist_ok=True)
     
     for param, data in tqdm(plots_data.items(), desc='Creating Compared plots'):
         plt.figure(figsize=(10, 6))
         legend_dict = OrderedDict()
-        for epochs, values, model_name, color, marker in data:
+        for epochs, values, model_name, color, marker, dataset in data:
+            if 'complete' in dataset:
+                line_style = '-'
+                line_width = 1.0  # Two times thicker
+            else:
+                line_style = '--'
+                line_width = 0.5  # Dashed line
+
             trimmed_model_name = model_name[4:] if len(model_name) > 4 else model_name
-            line, = plt.plot(epochs, values, label=f'{model_name}', linewidth=line_width, color=color)
+            line, = plt.plot(epochs, values, label=f'{model_name}', linewidth=line_width, color=color, linestyle=line_style)
             plt.text(epochs.iloc[-1], values.iloc[-1], trimmed_model_name, fontsize=1, color=color)
             legend_dict[model_name] = line
         plt.xlabel('Epoch')
@@ -126,14 +133,14 @@ def create_plots(data_dir, plot_dir, marker_size=0.5, line_width=0.5, legend_fon
     # Collect and plot combined plots
     if plot_mode in [0, 1, 3]:
         plots_data, use_log_scale = collect_plot_data(details_df, data_dir, model_styles, params, log_scale_threshold)
-        plot_combined_plots(plots_data, use_log_scale, plot_dir, line_width, legend_fontsize, dpi)
+        plot_combined_plots(plots_data, use_log_scale, plot_dir, dpi, legend_fontsize)
 
 # Define data directory and plot output directory
 data_dir = './'
 plot_output_dir = './plots'
 
 # Define selected train indices array
-selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 36, 37, 38, 40, 41, 43, 51]
+selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 75, 76, 81, 82, 84, 87, 88]
 
 # Call function to generate plots
 create_plots(data_dir, plot_output_dir, marker_size=0.5, line_width=0.5, legend_fontsize=5, dpi=1000, plot_mode=3, selected_train_indices=selected_train_indices)
