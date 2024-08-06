@@ -144,4 +144,4 @@ selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 75, 76
 #selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 36, 37, 38, 40, 41, 43, 51]
 
 # Call function to generate plots
-create_plots(data_dir, plot_output_dir, marker_size=0.5, line_width=0.5, legend_fontsize=5, dpi=1000, plot_mode=3, selected_train_indices=selected_train_indices)
+create_plots(data_dir, plot_output_dir, marker_size=0.5, line_width=0.5, legend_fontsize=5, dpi=2000, plot_mode=3, selected_train_indices=selected_train_indices)
