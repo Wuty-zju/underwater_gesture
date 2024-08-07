@@ -140,7 +140,7 @@ data_dir = './'
 plot_output_dir = './plots'
 
 # Define selected train indices array
-selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 75, 76, 81, 82, 84, 87, 88, 89, 91]
+selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 75, 76, 81, 82, 84, 87, 88, 91, 93]
 #selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 36, 37, 38, 40, 41, 43, 51]
 
 # Call function to generate plots
