@@ -3,21 +3,21 @@ from ultralytics import YOLO
 if __name__ == '__main__':
 
     # Build a YOLO model from scratch
-    model = YOLO('yolov10l.yaml') # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
+    model = YOLO('yolov9c.yaml') # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
 
     # Build a YOLOv9c model from pretrained weight
-    model = YOLO('yolov10l.pt') # YOLOv8n/s/m/l or YOLOv9c
+    model = YOLO('yolov9c.pt') # YOLOv8n/s/m/l or YOLOv9c
 
     # Display model information (optional)
     model.info()
 
     # Train the model on the COCO8 example dataset for 100 epochs
     results = model.train(data='datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml', epochs=100, batch=4, patience=0)
-    results = model.train(data='datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml', epochs=100, batch=4, patience=0)
 '''
 Start-Job -ScriptBlock {&'C:/Users/wutia/Anaconda3/envs/uw_g/python.exe' train.py > train.log 2>&1}
 Start-Job -ScriptBlock {& 'C:/Users/wutia/Anaconda3/envs/uw_g/python.exe' 'C:/Users/wutia/Desktop/underwater_gesture/train.py' > 'C:/Users/wutia/Desktop/underwater_gesture/train.log' 2>&1}
 Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_1.log" -RedirectStandardError "C:/Users/wutia/Desktop/underwater_gesture/log/train_2.log"
+$process1 = Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_1.log" -RedirectStandardError "C:/Users/wutia/Desktop/underwater_gesture/log/train_2.log" -PassThru; $process1 | Wait-Process; Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train_2.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_3.log" -RedirectStandardError "C:/Users/wutia/Desktop/underwater_gesture/log/train_4.log"
 
 Get-Content -Path "C:/Users/wutia/Desktop/underwater_gesture/log/train_2.log" -Wait
 Get-Process -Name "python"
