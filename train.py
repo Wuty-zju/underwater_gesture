@@ -3,10 +3,10 @@ from ultralytics import YOLO
 if __name__ == '__main__':
 
     # Build a YOLO model from scratch
-    model = YOLO('yolov10x.yaml') # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
+    model = YOLO('yolov10n.yaml') # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
 
     # Build a YOLOv9c model from pretrained weight
-    #model = YOLO('yolov9m.pt') # YOLOv8n/s/m/l or YOLOv9c
+    #model = YOLO('yolov9s.pt') # YOLOv8n/s/m/l or YOLOv9c
 
     # Display model information (optional)
     model.info()
@@ -19,6 +19,7 @@ results = model.train(data='datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml', e
 Start-Job -ScriptBlock {&'C:/Users/wutia/Anaconda3/envs/uw_g/python.exe' train.py > train.log 2>&1}
 Start-Job -ScriptBlock {& 'C:/Users/wutia/Anaconda3/envs/uw_g/python.exe' 'C:/Users/wutia/Desktop/underwater_gesture/train.py' > 'C:/Users/wutia/Desktop/underwater_gesture/train.log' 2>&1}
 Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_1.log" -RedirectStandardError "C:/Users/wutia/Desktop/underwater_gesture/log/train_2.log"
+Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Downloads/underwater_gesture/train.py" -RedirectStandardOutput "C:/Users/wutia/Downloads/underwater_gesture/log/train_1.log" -RedirectStandardError "C:/Users/wutia/Downloads/underwater_gesture/log/train_2.log"
 $process1 = Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_1.log" -RedirectStandardError "C:/Users/wutia/Desktop/underwater_gesture/log/train_2.log" -PassThru; $process1 | Wait-Process; Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train_2.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_3.log" -RedirectStandardError "C:/Users/wutia/Desktop/underwater_gesture/log/train_4.log"
 
 Get-Content -Path "C:/Users/wutia/Desktop/underwater_gesture/log/train_2.log" -Wait

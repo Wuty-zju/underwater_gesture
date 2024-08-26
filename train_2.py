@@ -3,10 +3,10 @@ from ultralytics import YOLO
 if __name__ == '__main__':
 
     # Build a YOLO model from scratch
-    model = YOLO('yolov10l.yaml') # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
+    model = YOLO('yolov10s.yaml') # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
 
     # Build a YOLOv9c model from pretrained weight
-#    model = YOLO('yolov9e.pt') # YOLOv8n/s/m/l or YOLOv9c
+    #model = YOLO('yolov10s.pt') # YOLOv8n/s/m/l or YOLOv9c
 
     # Display model information (optional)
     model.info()
@@ -18,7 +18,6 @@ Start-Job -ScriptBlock {&'C:/Users/wutia/Anaconda3/envs/uw_g/python.exe' train.p
 Start-Job -ScriptBlock {& 'C:/Users/wutia/Anaconda3/envs/uw_g/python.exe' 'C:/Users/wutia/Desktop/underwater_gesture/train.py' > 'C:/Users/wutia/Desktop/underwater_gesture/train.log' 2>&1}
 Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train_2.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_3.log" -RedirectStandardError "C:/Users/wutia/Desktop/underwater_gesture/log/train_4.log"
 Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Downloads/underwater_gesture/train_2.py" -RedirectStandardOutput "C:/Users/wutia/Downloads/underwater_gesture/log/train_3.log" -RedirectStandardError "C:/Users/wutia/Downloads/underwater_gesture/log/train_4.log"
-
 
 Get-Content -Path "C:/Users/wutia/Desktop/underwater_gesture/log/train_2.log" -Wait
 Get-Process -Name "python"
