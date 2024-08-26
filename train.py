@@ -3,10 +3,10 @@ from ultralytics import YOLO
 if __name__ == '__main__':
 
     # Build a YOLO model from scratch
-    model = YOLO('yolov9c.yaml') # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
+    model = YOLO('yolov9m.yaml') # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
 
     # Build a YOLOv9c model from pretrained weight
-    model = YOLO('yolov9c.pt') # YOLOv8n/s/m/l or YOLOv9c
+    model = YOLO('yolov9m.pt') # YOLOv8n/s/m/l or YOLOv9c
 
     # Display model information (optional)
     model.info()
