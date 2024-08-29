@@ -14,6 +14,8 @@ if __name__ == '__main__':
     # Train the model on the COCO8 example dataset for 100 epochs
     results = model.train(data='datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml', epochs=100, batch=4, patience=0)
 '''
+results = model.train(data='datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml', epochs=100, batch=4, patience=0)
+
 Start-Job -ScriptBlock {&'C:/Users/wutia/Anaconda3/envs/uw_g/python.exe' train.py > train.log 2>&1}
 Start-Job -ScriptBlock {& 'C:/Users/wutia/Anaconda3/envs/uw_g/python.exe' 'C:/Users/wutia/Desktop/underwater_gesture/train.py' > 'C:/Users/wutia/Desktop/underwater_gesture/train.log' 2>&1}
 Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_1.log" -RedirectStandardError "C:/Users/wutia/Desktop/underwater_gesture/log/train_2.log"
