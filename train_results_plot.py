@@ -76,8 +76,8 @@ def collect_plot_data(details_df, data_dir, model_styles, params, log_scale_thre
                     epochs = results_df[epoch_column]
                     plots_data[param].append((epochs, values, model_name, color, marker, row['Data']))
                     
-                    if values.max() / values.min() > log_scale_threshold:
-                        use_log_scale[param] = True
+                    #if values.max() / values.min() > log_scale_threshold:
+                    #   use_log_scale[param] = True
     
     return plots_data, use_log_scale
 
@@ -146,7 +146,7 @@ plot_output_dir = './plots'
 # 大型数据集-新-预训练-100 [75, 76, 81, 82, 84, 87, 88, 91, 93, 94, 95, 97, 101, 102, 103, 104, 105, 106, 107]
 # 小型数据集-新-预训练-100 [98, 99, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121]
 # 小型数据集-新-无预训练-100 [122, 123, 124, 125, 127, 128, 130, 131, 132, 133, 134, 136, 138, 139, 140, 142]
-selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 98, 99, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121]
+selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 98, 99, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 127, 128, 130, 131, 132, 133, 134, 136, 138, 139, 140, 142]
 
 # Call function to generate plots
 create_plots(data_dir, plot_output_dir, marker_size=0.5, line_width=0.5, legend_fontsize=5, dpi=1500, plot_mode=3, selected_train_indices=selected_train_indices)
