@@ -3,7 +3,7 @@ from ultralytics import YOLO
 if __name__ == '__main__':
 
     # Build a YOLO model from scratch
-    model = YOLO('yolov8x.yaml') # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
+    model = YOLO('yolov10s.yaml') # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
 
     # Build a YOLOv9c model from pretrained weight
     #model = YOLO('yolov9s.pt') # YOLOv8n/s/m/l or YOLOv9c
@@ -12,7 +12,7 @@ if __name__ == '__main__':
     model.info()
 
     # Train the model on the COCO8 example dataset for 100 epochs
-    results = model.train(data='datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml', epochs=100, batch=4, patience=0)
+    results = model.train(data='datasets/CADDY_gestures_complete_YOLO/CADDY_gestures_complete.yaml', epochs=100, batch=4, patience=0)
 '''
 results = model.train(data='datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml', epochs=100, batch=4, patience=0)
 
