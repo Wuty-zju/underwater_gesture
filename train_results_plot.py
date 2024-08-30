@@ -81,7 +81,7 @@ def plot_individual_plots(details_df, data_dir, plot_dir, model_styles, params, 
 
 def collect_plot_data(details_df, data_dir, model_styles, params, log_scale_threshold):
     """
-    收集用于绘制比较图的数据。
+    收集用于绘制比较图的数据，并为每个大类分配线型。
 
     参数:
     - details_df: 训练细节数据框
@@ -96,10 +96,38 @@ def collect_plot_data(details_df, data_dir, model_styles, params, log_scale_thre
     """
     plots_data = {param: [] for param in params}
     use_log_scale = {param: False for param in params}
+
+    # 定义大类与线型的映射
+    category_line_styles = {
+        '小型数据集-旧-预训练-100': '-',
+        '小型数据集-旧-预训练-500': '--',
+        '小型数据集-旧-预训练-2000': ':',
+        '大型数据集-新-预训练-100': '-.',
+        '小型数据集-新-预训练-100': '-',
+        '小型数据集-新-无预训练-100': '--'
+    }
     
+    # 根据训练索引分配大类
+    def get_category(train_index):
+        if train_index in [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32]:
+            return '小型数据集-旧-预训练-100'
+        elif train_index in [36, 37, 40, 41, 43, 51, 52, 54, 55, 56, 57, 58, 62, 63, 65, 66]:
+            return '小型数据集-旧-预训练-500'
+        elif train_index in [69, 70, 71, 72, 73]:
+            return '小型数据集-旧-预训练-2000'
+        elif train_index in [75, 76, 81, 82, 84, 87, 88, 91, 93, 94, 95, 97, 101, 102, 103, 104, 105, 106, 107]:
+            return '大型数据集-新-预训练-100'
+        elif train_index in [98, 99, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121]:
+            return '小型数据集-新-预训练-100'
+        elif train_index in [122, 123, 124, 125, 127, 128, 130, 131, 132, 133, 134, 136, 138, 139, 140, 142, 143, 144]:
+            return '小型数据集-新-无预训练-100'
+        else:
+            return '未知'
+
     for _, row in tqdm(details_df.iterrows(), total=details_df.shape[0], desc='Collecting data for compared plots'):
         model_name = row['Model'].split('.')[0]
         results_csv_path = row['Path to results.csv']
+        train_index = row['Train Index']
         
         if pd.notna(results_csv_path) and os.path.exists(os.path.join(data_dir, results_csv_path)):
             results_df = pd.read_csv(os.path.join(data_dir, results_csv_path)).rename(columns=str.strip)
@@ -107,17 +135,19 @@ def collect_plot_data(details_df, data_dir, model_styles, params, log_scale_thre
                 continue
             
             color, marker = model_styles[model_name]
+            category = get_category(train_index)
+            line_style = category_line_styles.get(category, '-')
             
             for param in params:
                 if param in results_df.columns:
                     values = results_df[param]
                     epochs = results_df['epoch']
-                    plots_data[param].append((epochs, values, model_name, color, marker, row['Data']))
+                    plots_data[param].append((epochs, values, model_name, color, marker, line_style))
                     
                     # 对数刻度判断（如果需要）
                     # if values.max() / values.min() > log_scale_threshold:
                     #    use_log_scale[param] = True
-    
+
     return plots_data, use_log_scale
 
 def plot_combined_plots(plots_data, use_log_scale, plot_dir, dpi, legend_fontsize):
@@ -137,13 +167,9 @@ def plot_combined_plots(plots_data, use_log_scale, plot_dir, dpi, legend_fontsiz
     for param, data in tqdm(plots_data.items(), desc='Creating Compared plots'):
         plt.figure(figsize=(10, 6))
         legend_dict = OrderedDict()
-        for epochs, values, model_name, color, marker, dataset in data:
-            line_style = '-' if 'complete' in dataset else '--'
-            line_width = 1.0 if line_style == '-' else 0.5
-
-            trimmed_model_name = model_name[4:] if len(model_name) > 4 else model_name
-            line, = plt.plot(epochs, values, label=model_name, linewidth=line_width, color=color, linestyle=line_style)
-            plt.text(epochs.iloc[-1], values.iloc[-1], trimmed_model_name, fontsize=1, color=color)
+        for epochs, values, model_name, color, marker, line_style in data:
+            line, = plt.plot(epochs, values, label=model_name, linewidth=1.0, color=color, linestyle=line_style)
+            plt.text(epochs.iloc[-1], values.iloc[-1], model_name, fontsize=1, color=color)
             legend_dict[model_name] = line
         plt.xlabel('Epoch')
         plt.ylabel(param)
@@ -196,8 +222,10 @@ plot_output_dir = './plots'
 # 小型数据集-旧-预训练-2000 [69, 70, 71, 72, 73]
 # 大型数据集-新-预训练-100 [75, 76, 81, 82, 84, 87, 88, 91, 93, 94, 95, 97, 101, 102, 103, 104, 105, 106, 107]
 # 小型数据集-新-预训练-100 [98, 99, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121]
-# 小型数据集-新-无预训练-100 [122, 123, 124, 125, 127, 128, 130, 131, 132, 133, 134, 136, 138, 139, 140, 142]
-selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 98, 99, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 127, 128, 130, 131, 132, 133, 134, 136, 138, 139, 140, 142]
+# 小型数据集-新-无预训练-100 [122, 123, 124, 125, 127, 128, 130, 131, 132, 133, 134, 136, 138, 139, 140, 142, 143, 144]
+selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32,
+                          98, 99, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121,
+                          122, 123, 124, 125, 127, 128, 130, 131, 132, 133, 134, 136, 138, 139, 140, 142, 143, 144]
 
 # 生成图像
 create_plots(data_dir, plot_output_dir, marker_size=0.5, line_width=0.5, legend_fontsize=5, dpi=1500, plot_mode=3, selected_train_indices=selected_train_indices)
