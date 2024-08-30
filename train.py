@@ -12,7 +12,7 @@ if __name__ == '__main__':
     model.info()
 
     # Train the model on the COCO8 example dataset for 100 epochs
-    results = model.train(data='datasets/CADDY_gestures_complete_YOLO/CADDY_gestures_complete.yaml', epochs=100, batch=4, patience=0)
+    results = model.train(data='datasets/CADDY_gestures_complete_YOLO/CADDY_gestures_complete.yaml', epochs=100, batch=4, patience=0, pretrained=False)
 '''
 results = model.train(data='datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml', epochs=100, batch=4, patience=0)
 
