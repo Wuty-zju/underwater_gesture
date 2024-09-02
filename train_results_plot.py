@@ -182,7 +182,7 @@ def plot_combined_plots(plots_data, use_log_scale, plot_dir, dpi, legend_fontsiz
         plt.savefig(os.path.join(compared_dir, f'{param.replace("/", "_")}_compared.png'), dpi=dpi)
         plt.close()
 
-def create_plots(data_dir, plot_dir, marker_size=0.5, line_width=0.5, legend_fontsize=5, dpi=1000, log_scale_threshold=100, plot_mode=1, selected_train_indices=None):
+def create_plots(data_dir, plot_dir, marker_size=0.1, line_width=0.05, legend_fontsize=5, dpi=1000, log_scale_threshold=100, plot_mode=1, selected_train_indices=None):
     """
     创建并绘制图像。
 
@@ -227,11 +227,10 @@ plot_output_dir = './plots'
 # 小型数据集-新-无预训练-100 [122, 123, 124, 125, 127, 128, 130, 131, 132, 133, 134, 136, 138, 139, 140, 142, 143, 144]
 # 大型数据集-新-无预训练-100 [149, 150, 151, 152]
 
-selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32,
-                          98, 99, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121,
-                          122, 123, 124, 125, 127, 128, 130, 131, 132, 133, 134, 136, 138, 139, 140, 142, 143, 144]
+selected_train_indices = [75, 76, 81, 82, 84, 87, 88, 91, 93, 94, 95, 97, 101, 102, 103, 104, 105, 106, 107,
+                          149, 150, 151]
 
 # 生成图像
-create_plots(data_dir, plot_output_dir, marker_size=0.4, line_width=0.3, legend_fontsize=5, dpi=2000, plot_mode=3, selected_train_indices=selected_train_indices)
+create_plots(data_dir, plot_output_dir, marker_size=0.1, line_width=0.05, legend_fontsize=2, dpi=2000, plot_mode=3, selected_train_indices=selected_train_indices)
 
-#Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train_results_plot.py"
+#Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train_results_plot.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_results_plot.log"
