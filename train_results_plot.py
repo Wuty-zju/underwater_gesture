@@ -228,4 +228,6 @@ selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32,
                           122, 123, 124, 125, 127, 128, 130, 131, 132, 133, 134, 136, 138, 139, 140, 142, 143, 144]
 
 # 生成图像
-create_plots(data_dir, plot_output_dir, marker_size=0.5, line_width=0.5, legend_fontsize=5, dpi=1500, plot_mode=3, selected_train_indices=selected_train_indices)
+create_plots(data_dir, plot_output_dir, marker_size=0.4, line_width=0.3, legend_fontsize=5, dpi=2000, plot_mode=3, selected_train_indices=selected_train_indices)
+
+#Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train_results_plot.py"
