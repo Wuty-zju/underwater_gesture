@@ -228,7 +228,7 @@ plot_output_dir = './plots'
 # 大型数据集-新-无预训练-100 [149, 150, 151, 152]
 
 selected_train_indices = [75, 76, 81, 82, 84, 87, 88, 91, 93, 94, 95, 97, 101, 102, 103, 104, 105, 106, 107,
-                          149, 150, 151]
+                          149, 150, 151, 152]
 
 # 生成图像
 create_plots(data_dir, plot_output_dir, marker_size=0.1, line_width=0.05, legend_fontsize=2, dpi=2000, plot_mode=3, selected_train_indices=selected_train_indices)
