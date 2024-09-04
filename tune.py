@@ -1,16 +1,25 @@
+import os
 from ultralytics import YOLO
+from ray import tune
+
+def trial_dirname_creator(trial):
+    return f"{trial.trial_id}"
 
 if __name__ == '__main__':
-
-    model = YOLO("yolov10n.yaml") # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
-
+    dataset_path = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml"))
+    
+    model = YOLO("yolov10n.yaml")
+    
     result_grid = model.tune(
-        data="datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml",
+        data=dataset_path,
+        device=[0],
         epochs=50,
         iterations=300,
-        use_ray=True
+        use_ray=True,
+        tune_config=tune.TuneConfig(
+            trial_dirname_creator=trial_dirname_creator
         )
-
+    )
 '''
 # 挂起进程
 Start-Process -FilePath python.exe -ArgumentList tune.py -RedirectStandardOutput log/tune_1.log -RedirectStandardError log/tune_2.log

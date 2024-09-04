@@ -2,26 +2,23 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
 
-    model = YOLO('yolov8n.yaml') # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
-    #model = YOLO('yolov9s.pt')
+    model = YOLO("yolov8n.yaml") # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
 
-    model.info()
-
-    results = model.train(data='datasets/CADDY_gestures_complete_YOLO/CADDY_gestures_complete.yaml', 
-                          epochs=100, 
-                          batch=4, 
-                          patience=0, 
-                          pretrained=False)
+    results = model.train(
+        data="datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml",
+        epochs=100,
+        batch=4,
+        patience=0,
+        pretrained=False
+        )
 
 '''
-# wty_lab_pc
+# 挂起进程
 Start-Process -FilePath python.exe -ArgumentList train.py -RedirectStandardOutput log/train_1.log -RedirectStandardError log/train_2.log
-Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_1.log" -RedirectStandardError "C:/Users/wutia/Desktop/underwater_gesture/log/train_2.log"
-# windows
-Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Downloads/underwater_gesture/train.py" -RedirectStandardOutput "C:/Users/wutia/Downloads/underwater_gesture/log/train_1.log" -RedirectStandardError "C:/Users/wutia/Downloads/underwater_gesture/log/train_2.log"
+Start-Process -FilePath python.exe -ArgumentList train.py -RedirectStandardOutput log/train_3.log -RedirectStandardError log/train_4.log
 
 # 读取和打印日志
-Get-Content -Path "C:/Users/wutia/Desktop/underwater_gesture/log/train_2.log" -Wait
+Get-Content -Path log/train_2.log -Wait
 
 # 查找和停止进程
 Get-Process -Name "python"
