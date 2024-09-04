@@ -1,9 +1,9 @@
 from ultralytics import YOLO
 
-model = YOLO("yolov8n.yaml") # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
+model = YOLO("yolov10n.yaml") # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
 
-model.tune(data="datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml", epochs=50, iterations=300, optimizer="AdamW")
-
+result_grid = model.tune(data="datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml", epochs=50, iterations=300, use_ray=True)
+model.tune(data="coco8.yaml")
 '''
 Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/tune.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/tune_1.log" -RedirectStandardError "C:/Users/wutia/Desktop/underwater_gesture/log/tune_2.log"
 Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Downloads/underwater_gesture/tune.py" -RedirectStandardOutput "C:/Users/wutia/Downloads/underwater_gesture/log/tune_1.log" -RedirectStandardError "C:/Users/wutia/Downloads/underwater_gesture/log/tune_2.log"
