@@ -4,4 +4,5 @@ flagged/
 log/
 others/
 runs/
+wandb/
 *.pt
