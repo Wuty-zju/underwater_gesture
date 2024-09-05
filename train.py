@@ -18,7 +18,7 @@ Start-Process -FilePath python.exe -ArgumentList train.py -RedirectStandardOutpu
 Start-Process -FilePath python.exe -ArgumentList train.py -RedirectStandardOutput log/train_3.log -RedirectStandardError log/train_4.log
 
 # 读取和打印日志
-Get-Content -Path log/train_2.log -Wait
+Get-Content -Path log/train.log -Wait
 
 # 查找和停止进程
 Get-Process -Name "python"

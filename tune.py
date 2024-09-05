@@ -5,12 +5,13 @@ if __name__ == '__main__':
     model = YOLO("yolov10n.yaml")
     
     model.tune(
-        data = "C:/Users/wutia/Desktop/underwater_gesture/datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml",
-        device = [0],
+        data="C:/Users/wutia/Desktop/underwater_gesture/datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml",
+        device=[0],
         epochs=50,
         iterations=300,
         use_ray=True
         )
+
 '''
 # 挂起进程
 Start-Process -FilePath python.exe -ArgumentList tune.py -RedirectStandardOutput log/tune_1.log -RedirectStandardError log/tune_2.log
