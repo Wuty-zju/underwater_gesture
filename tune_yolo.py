@@ -2,7 +2,7 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
 
-    model = YOLO("yolov8l.yaml") # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
+    model = YOLO("yolov8m.yaml") # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
 
     model.tune(
         data="datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml",
