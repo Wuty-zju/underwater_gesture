@@ -19,7 +19,7 @@ Get-Process -Name "python"
 Get-Process -Name "python" | Stop-Process
 
 # 启动进程并将输出重定向到日志文件
-nohup python3 tune_yolo.py > log/tune_yolo_1.log 2> log/tune_yolo_2.log &
+nohup bash -c 'python tune_yolo.py & PID=$!; echo "PID: $PID"; wait $PID' &> "log/tune_yolo_$(date +%Y%m%d_%H%M%S).log" &
 
 # 查找和停止进程
 ps -C python3
