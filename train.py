@@ -1,24 +1,29 @@
+from torch import device
 from ultralytics import YOLO
 
-if __name__ == '__main__':
 
-    model = YOLO("yolov8n.yaml") # YOLOv8n/s/m/l/x or YOLOv9t/s/m/c/e YOLOv10n/s/m/b/l/x
+model_configs = ["yolo11l.yaml", "yolo11x.yaml"]
 
+
+def train_yolo_model(model_config):
+    model = YOLO(model_config)
     results = model.train(
         data="datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml",
-        epochs=100,
+        epochs=1000,
         batch=4,
         patience=0,
-        pretrained=False
-        )
+        pretrained=False,
+        device=[0],
+    )
+
+# 主程序
+if __name__ == '__main__':
+    for config in model_configs:
+        train_yolo_model(config)
 
 '''
 # 挂起进程
-Start-Process -FilePath python.exe -ArgumentList train.py -RedirectStandardOutput log/train_1.log -RedirectStandardError log/train_2.log
-Start-Process -FilePath python.exe -ArgumentList train.py -RedirectStandardOutput log/train_3.log -RedirectStandardError log/train_4.log
-
-# 读取和打印日志
-Get-Content -Path log/train.log -Wait
+$timestamp = (Get-Date).ToString("yyyyMMdd_HHmmss"); $p = Start-Process -FilePath python.exe -ArgumentList "train.py" -RedirectStandardOutput "log/train_${timestamp}_1.log" -RedirectStandardError "log/train_${timestamp}_2.log"
 
 # 查找和停止进程
 Get-Process -Name "python"

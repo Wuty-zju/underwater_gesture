@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
 '''
 # 挂起进程
-Start-Process -FilePath python.exe -ArgumentList tune.py -RedirectStandardOutput log/tune_1.log -RedirectStandardError log/tune_2.log
+$timestamp = (Get-Date).ToString("yyyyMMdd_HHmmss"); $p = Start-Process -FilePath python.exe -ArgumentList "tune.py" -RedirectStandardOutput "log/tune_yolo_${timestamp}_1.log" -RedirectStandardError "log/tune_yolo_${timestamp}_2.log" -PassThru; Add-Content "log/tune_yolo_${timestamp}_1.log" "PID: $($p.Id)"
 
 # 查找和停止进程
 Get-Process -Name "python"
