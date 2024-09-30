@@ -1,4 +1,3 @@
-from torch import device
 from ultralytics import YOLO
 
 
