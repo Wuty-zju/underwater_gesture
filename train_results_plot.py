@@ -100,11 +100,12 @@ def collect_plot_data(details_df, data_dir, model_styles, params, log_scale_thre
     # 定义大类与线型的映射
     category_line_styles = {
         '小型数据集-旧-预训练-100': '-',
-        '小型数据集-旧-预训练-500': '--',
+        '小型数据集-旧-预训练-500': '-',
         '小型数据集-旧-预训练-2000': ':',
         '大型数据集-新-预训练-100': '-.',
         '小型数据集-新-预训练-100': '-',
-        '小型数据集-新-无预训练-100': '--'
+        '小型数据集-新-无预训练-100': '-',
+        '大型数据集-新-无预训练-100': '-.',
     }
     
     # 根据训练索引分配大类
@@ -170,7 +171,7 @@ def plot_combined_plots(plots_data, use_log_scale, plot_dir, dpi, legend_fontsiz
         plt.figure(figsize=(10, 6))
         legend_dict = OrderedDict()
         for epochs, values, model_name, color, marker, line_style in data:
-            line, = plt.plot(epochs, values, label=model_name, linewidth=1.0, color=color, linestyle=line_style)
+            line, = plt.plot(epochs, values, label=model_name, linewidth=0.5, color=color, linestyle=line_style)
             plt.text(epochs.iloc[-1], values.iloc[-1], model_name, fontsize=1, color=color)
             legend_dict[model_name] = line
         plt.xlabel('Epoch')
@@ -227,11 +228,13 @@ plot_output_dir = './plots'
 # 小型数据集-新-无预训练-100 [122, 123, 124, 125, 127, 128, 130, 131, 132, 133, 134, 136, 138, 139, 140, 142, 143, 144]
 # 大型数据集-新-无预训练-100 [149, 150, 151, 152]
 
-selected_train_indices = [75, 76, 81, 82, 84, 87, 88, 91, 93, 94, 95, 97, 101, 102, 103, 104, 105, 106, 107,
-                          149, 150, 151, 152]
+#selected_train_indices = [75, 76, 81, 82, 84, 87, 88, 91, 93, 94, 95, 97, 101, 102, 103, 104, 105, 106, 107,
+#                          149, 150, 151, 152]
+
+selected_train_indices = [12, 13, 14, 15, 17, 19, 27, 28, 29, 30, 31, 32, 75, 82, 84, 87]
 
 # 生成图像
-create_plots(data_dir, plot_output_dir, marker_size=0.1, line_width=0.02, legend_fontsize=2, dpi=2000, plot_mode=3, selected_train_indices=selected_train_indices)
+create_plots(data_dir, plot_output_dir, marker_size=0.1, line_width=0.1, legend_fontsize=5, dpi=1000, plot_mode=3, selected_train_indices=selected_train_indices)
 
 '''
 Start-Process -FilePath "C:/Users/wutia/Anaconda3/envs/uw_g/python.exe" -ArgumentList "C:/Users/wutia/Desktop/underwater_gesture/train_results_plot.py" -RedirectStandardOutput "C:/Users/wutia/Desktop/underwater_gesture/log/train_results_plot.log"
