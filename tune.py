@@ -5,7 +5,7 @@ if __name__ == '__main__':
     model = YOLO("yolov10s.yaml")
     
     model.tune(
-        data="C:/Users/wutia/Desktop/underwater_gesture/datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml",
+        data="datasets/CADDY_gestures_YOLO/CADDY_gestures.yaml",
         device=[0],
         epochs=50,
         iterations=300,
