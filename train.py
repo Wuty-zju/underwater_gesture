@@ -8,16 +8,19 @@ model_configs = [
     #"yolov9t.yaml", "yolov9s.yaml", "yolov9m.yaml", "yolov9c.yaml", "yolov9e.yaml",           # YOLOv9 模型
     #"yolov10n.yaml", "yolov10s.yaml", "yolov10m.yaml", "yolov10l.yaml", "yolov10x.yaml",      # YOLOv10 模型
     #"yolo11n.yaml", "yolo11s.yaml", "yolo11m.yaml", "yolo11l.yaml", "yolo11x.yaml"            # YOLO11 模型
-    #"yolo11x-C3k2-AdditiveBlock.yaml" 
-    #"yolo11x-C3k2-SCConv.yaml"
-    #"yolo11m-C3k2-KAN.yaml"
-    #"yolo11m-ReCalibrationFPN-P345.yaml "   
-    #"yolo11l-WaveletPool.yaml", "yolo11x-WaveletPool.yaml"
-    #"yolo11n-C3k2-WTConv.yaml", "yolo11s-C3k2-WTConv.yaml", "yolo11m-C3k2-WTConv.yaml", "yolo11l-C3k2-WTConv.yaml", "yolo11x-C3k2-WTConv.yaml"
-    #"yolo11x-LADH.yaml", "yolo11l-LADH.yaml", "yolo11m-LADH.yaml", "yolo11s-LADH.yaml", "yolo11n-LADH.yaml" 
-    #"yolo11n-RSCD.yaml", "yolo11s-RSCD.yaml", "yolo11m-RSCD.yaml", "yolo11l-RSCD.yaml", "yolo11x-RSCD.yaml"# 当前选择
-    #"yolo11n-ReCalibrationFPN-P2345.yaml", "yolo11s-ReCalibrationFPN-P2345.yaml", "yolo11m-ReCalibrationFPN-P2345.yaml", "yolo11l-ReCalibrationFPN-P2345.yaml", "yolo11x-ReCalibrationFPN-P2345.yaml"
-    #"yolo11n-FeaturePyramidSharedConv.yaml", "yolo11s-FeaturePyramidSharedConv.yaml", "yolo11m-FeaturePyramidSharedConv.yaml", "yolo11l-FeaturePyramidSharedConv.yaml", "yolo11x-FeaturePyramidSharedConv.yaml"
+    #"yolo11-C3k2-AdditiveBlock.yaml",
+    #"yolo11-C3k2-SCConv.yaml",
+    #"yolo11-C3k2-KAN.yaml",
+    #"yolo11-ReCalibrationFPN-P345.yaml",
+    #"yolo11-WaveletPool.yaml",
+    #"yolo11-efficientViT.yaml",
+    #"yolo11-C3k2-WTConv.yaml",
+    #"yolo11-LADH.yaml",
+    #"yolo11-RSCD.yaml",
+    #"yolo11-C3k2-EIEM.yaml",
+    #"yolo11-ReCalibrationFPN-P2345.yaml",
+    #"yolo11-FeaturePyramidSharedConv.yaml"
+    #"yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml"
     "yolo11m-ReCalibrationFPN-P2345.yaml", "yolo11l-ReCalibrationFPN-P2345.yaml", "yolo11x-ReCalibrationFPN-P2345.yaml"
 ]
 
