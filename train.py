@@ -12,11 +12,13 @@ model_configs = [
     #"yolo11x-C3k2-SCConv.yaml"
     #"yolo11m-C3k2-KAN.yaml"
     #"yolo11m-ReCalibrationFPN-P345.yaml "   
-    #"yolo11n-WaveletPool.yaml"
-    #"yolo11m-ReCalibrationFPN-P345.yaml", "yolo11l-ReCalibrationFPN-P345.yaml", "yolo11x-ReCalibrationFPN-P345.yaml", "yolo11s-ReCalibrationFPN-P345.yaml", "yolo11n-ReCalibrationFPN-P345.yaml"
-    #"yolo11x-efficientViT.yaml", "yolo11l-efficientViT.yaml", "yolo11m-efficientViT.yaml", "yolo11s-efficientViT.yaml", "yolo11n-efficientViT.yaml"
-    #"yolo11n-C3k2-EIEM.yaml", "yolo11s-C3k2-EIEM.yaml", "yolo11m-C3k2-EIEM.yaml", "yolo11l-C3k2-EIEM.yaml", "yolo11x-C3k2-EIEM.yaml"
-    "yolo11n-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11s-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11m-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11l-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11x-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11l-C3k2-EIEM.yaml", "yolo11x-C3k2-EIEM.yaml","yolo11s-efficientViT.yaml", "yolo11n-efficientViT.yaml"# 当前选择
+    #"yolo11l-WaveletPool.yaml", "yolo11x-WaveletPool.yaml"
+    #"yolo11n-C3k2-WTConv.yaml", "yolo11s-C3k2-WTConv.yaml", "yolo11m-C3k2-WTConv.yaml", "yolo11l-C3k2-WTConv.yaml", "yolo11x-C3k2-WTConv.yaml"
+    #"yolo11x-LADH.yaml", "yolo11l-LADH.yaml", "yolo11m-LADH.yaml", "yolo11s-LADH.yaml", "yolo11n-LADH.yaml" 
+    #"yolo11n-RSCD.yaml", "yolo11s-RSCD.yaml", "yolo11m-RSCD.yaml", "yolo11l-RSCD.yaml", "yolo11x-RSCD.yaml"# 当前选择
+    #"yolo11n-ReCalibrationFPN-P2345.yaml", "yolo11s-ReCalibrationFPN-P2345.yaml", "yolo11m-ReCalibrationFPN-P2345.yaml", "yolo11l-ReCalibrationFPN-P2345.yaml", "yolo11x-ReCalibrationFPN-P2345.yaml"
+    #"yolo11n-FeaturePyramidSharedConv.yaml", "yolo11s-FeaturePyramidSharedConv.yaml", "yolo11m-FeaturePyramidSharedConv.yaml", "yolo11l-FeaturePyramidSharedConv.yaml", "yolo11x-FeaturePyramidSharedConv.yaml"
+    "yolo11m-ReCalibrationFPN-P2345.yaml", "yolo11l-ReCalibrationFPN-P2345.yaml", "yolo11x-ReCalibrationFPN-P2345.yaml"
 ]
 
 datasets = {
