@@ -2,7 +2,7 @@ datasets/
 examples/
 flagged/
 log/
-others/
+others/ignore_git/
 runs/
 wandb/
 plots/

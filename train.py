@@ -25,7 +25,7 @@ datasets = {
 }
 
 hyperparameters = {
-    "device": [0],             # 设备: 单GPU ("0"), 多GPU ("0,1"), 或 CPU ("cpu")
+    "device": [1],             # 设备: 单GPU ("0"), 多GPU ("0,1"), 或 CPU ("cpu")
     "epochs": 500,             # 训练轮数
     "batch_size": 8,          # 每批次图像数量
     "imgsz": 640,              # 输入图像尺寸
