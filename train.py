@@ -19,9 +19,20 @@ model_configs = [
     #"yolo11-RSCD.yaml",
     #"yolo11-C3k2-EIEM.yaml",
     #"yolo11-ReCalibrationFPN-P2345.yaml",
-    #"yolo11-FeaturePyramidSharedConv.yaml"
-    #"yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml"
-    "yolo11m-ReCalibrationFPN-P2345.yaml", "yolo11l-ReCalibrationFPN-P2345.yaml", "yolo11x-ReCalibrationFPN-P2345.yaml"
+    #"yolo11-FeaturePyramidSharedConv.yaml",
+    #"yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml",
+    #"yolo11n-C3k2-LFE.yaml", "yolo11s-C3k2-LFE.yaml", "yolo11m-C3k2-LFE.yaml", "yolo11l-C3k2-LFE.yaml", "yolo11x-C3k2-LFE.yaml", 
+    #"yolo11n-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11s-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11m-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11l-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11x-C3k2-MutilScaleEdgeInformationSelect.yaml"
+    #"yolo11-C3k2-HDRAB.yaml",#nan 
+    #"yolo11x-C3k2-RAB.yaml", "yolo11l-C3k2-RAB.yaml", "yolo11m-C3k2-RAB.yaml", "yolo11s-C3k2-RAB.yaml", "yolo11n-C3k2-RAB.yaml", 
+    #"yolo11n-C2BRA.yaml", "yolo11s-C2BRA.yaml", "yolo11m-C2BRA.yaml", "yolo11l-C2BRA.yaml", "yolo11x-C2BRA.yaml", 
+    #"yolo11n-C2CGA.yaml", "yolo11s-C2CGA.yaml", "yolo11m-C2CGA.yaml", "yolo11l-C2CGA.yaml", "yolo11x-C2CGA.yaml", 
+    #"yolo11l-ReCalibrationFPN-P2345.yaml", "yolo11x-ReCalibrationFPN-P2345.yaml", 
+    #"yolo11x-C3k2-LFE.yaml", 
+    #"yolo11l-C2BRA.yaml", "yolo11x-C2BRA.yaml",
+    #"yolo11n-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11s-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11m-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11l-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11x-C3k2-MutilScaleEdgeInformationSelect.yaml"
+    "yolo11x-C3k2-RAB.yaml", "yolo11l-C3k2-RAB.yaml", "yolo11m-C3k2-RAB.yaml", "yolo11s-C3k2-RAB.yaml", "yolo11n-C3k2-RAB.yaml", 
+    "yolo11n-C2CGA.yaml", "yolo11s-C2CGA.yaml", "yolo11m-C2CGA.yaml", "yolo11l-C2CGA.yaml", "yolo11x-C2CGA.yaml"
 ]
 
 datasets = {
@@ -30,7 +41,7 @@ datasets = {
 }
 
 hyperparameters = {
-    "device": [1],             # 设备: 单GPU ("0"), 多GPU ("0,1"), 或 CPU ("cpu")
+    "device": [0],             # 设备: 单GPU ("0"), 多GPU ("0,1"), 或 CPU ("cpu")
     "epochs": 500,             # 训练轮数
     "batch_size": 8,          # 每批次图像数量
     "imgsz": 640,              # 输入图像尺寸
