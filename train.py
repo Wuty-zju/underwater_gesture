@@ -13,21 +13,26 @@ model_configs = [
     #"yolo11-C3k2-KAN.yaml",
     #"yolo11-ReCalibrationFPN-P345.yaml",         # sample跑完
     #"yolo11-WaveletPool.yaml",         # sample跑完
-    #"yolo11-efficientViT.yaml",
-    #"yolo11-C3k2-WTConv.yaml",
-    #"yolo11-LADH.yaml",
-    #"yolo11-RSCD.yaml",
-    #"yolo11-C3k2-EIEM.yaml",
-    #"yolo11-ReCalibrationFPN-P2345.yaml",
-    #"yolo11-FeaturePyramidSharedConv.yaml",
-    #"yolo11n-C3k2-LFE.yaml",
-    #"yolo11-C3k2-HDRAB.yaml",nan 
-    #"yolo11-C3k2-RAB.yaml", nan
-    #"yolo11-C2BRA.yaml"
-    #"yolo11-C2CGA.yaml"
-    #"yolo11-C3k2-LFE.yaml", 
-    #"yolo11n-C3k2-MutilScaleEdgeInformationSelect.yaml",
-    #"yolo11-C3k2-RAB.yaml", nan
+    #"yolo11-efficientViT.yaml",            # sample跑完（缺n/s）
+    #"yolo11-C3k2-WTConv.yaml",         # sample跑完
+    #"yolo11-LADH.yaml",                # sample跑完
+    #"yolo11-RSCD.yaml",                # sample跑完
+    #"yolo11-C3k2-EIEM.yaml",           # sample跑完（缺l/x）
+    #"yolo11-ReCalibrationFPN-P2345.yaml",                # sample跑完
+    #"yolo11-FeaturePyramidSharedConv.yaml",                # sample跑完
+    #"yolo11n-C3k2-LFE.yaml",                # sample跑完
+    #"yolo11-C2BRA.yaml",                # sample跑完
+    #"yolo11-C2CGA.yaml",                # sample跑完
+    #"yolo11-C3k2-LFE.yaml",                 # sample跑完
+    #"yolo11n-C3k2-MutilScaleEdgeInformationSelect.yaml",                 # sample跑完
+    #"yolo11n-C3k2-RAB.yaml", "yolo11s-C3k2-RAB.yaml", "yolo11m-C3k2-RAB.yaml", "yolo11l-C3k2-RAB.yaml", "yolo11x-C3k2-RAB.yaml", # nan（关闭amp试试）
+    #"yolo11n-C3k2-HDRAB.yaml", "yolo11s-C3k2-HDRAB.yaml", "yolo11m-C3k2-HDRAB.yaml", "yolo11l-C3k2-HDRAB.yaml", "yolo11x-C3k2-HDRAB.yaml", # nan（关闭amp试试）
+    #"yolo11n-C3k2-RAB.yaml", "yolo11s-C3k2-RAB.yaml", "yolo11m-C3k2-RAB.yaml", "yolo11l-C3k2-RAB.yaml", "yolo11x-C3k2-RAB.yaml", # nan（关闭amp试试）
+    #"yolo11-C3k2-DLKA.yaml", 
+    #"yolo11-ASF-P2.yaml", 
+    #"yolo11-C3k2-ContextGuided.yaml", 
+    #"yolo11-AIFI.yaml", 
+    #"yolo11-C3k2-RFAConv.yaml", 
 ]
 
 datasets = {
@@ -37,6 +42,7 @@ datasets = {
 
 hyperparameters = {
     "device": [0],             # 设备: 单GPU ("0"), 多GPU ("0,1"), 或 CPU ("cpu")
+    "amp": False,              # 是否启用混合精度训练(默认启用)
     "epochs": 500,             # 训练轮数
     "batch_size": 8,          # 每批次图像数量
     "imgsz": 640,              # 输入图像尺寸
@@ -68,6 +74,7 @@ def train_model(train_model_config, data_path, hyperparameters, train_save_dir, 
         save=hyperparameters["save"],
         plots=hyperparameters["plots"],
         device=hyperparameters["device"],
+        amp=hyperparameters["amp"],
         project=train_save_dir,
         name=name
     )
