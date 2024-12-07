@@ -8,11 +8,11 @@ model_configs = [
     #"yolov9t.yaml", "yolov9s.yaml", "yolov9m.yaml", "yolov9c.yaml", "yolov9e.yaml",           # YOLOv9 模型
     #"yolov10n.yaml", "yolov10s.yaml", "yolov10m.yaml", "yolov10l.yaml", "yolov10x.yaml",      # YOLOv10 模型
     #"yolo11n.yaml", "yolo11s.yaml", "yolo11m.yaml", "yolo11l.yaml", "yolo11x.yaml"            # YOLO11 模型
-    #"yolo11-C3k2-AdditiveBlock.yaml",
-    #"yolo11-C3k2-SCConv.yaml",
+    #"yolo11-C3k2-AdditiveBlock.yaml",          # sample跑完
+    #"yolo11-C3k2-SCConv.yaml",         # sample跑完
     #"yolo11-C3k2-KAN.yaml",
-    #"yolo11-ReCalibrationFPN-P345.yaml",
-    #"yolo11-WaveletPool.yaml",
+    #"yolo11-ReCalibrationFPN-P345.yaml",         # sample跑完
+    #"yolo11-WaveletPool.yaml",         # sample跑完
     #"yolo11-efficientViT.yaml",
     #"yolo11-C3k2-WTConv.yaml",
     #"yolo11-LADH.yaml",
@@ -20,19 +20,14 @@ model_configs = [
     #"yolo11-C3k2-EIEM.yaml",
     #"yolo11-ReCalibrationFPN-P2345.yaml",
     #"yolo11-FeaturePyramidSharedConv.yaml",
-    #"yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml",
-    #"yolo11n-C3k2-LFE.yaml", "yolo11s-C3k2-LFE.yaml", "yolo11m-C3k2-LFE.yaml", "yolo11l-C3k2-LFE.yaml", "yolo11x-C3k2-LFE.yaml", 
-    #"yolo11n-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11s-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11m-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11l-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11x-C3k2-MutilScaleEdgeInformationSelect.yaml"
-    #"yolo11-C3k2-HDRAB.yaml",#nan 
-    #"yolo11x-C3k2-RAB.yaml", "yolo11l-C3k2-RAB.yaml", "yolo11m-C3k2-RAB.yaml", "yolo11s-C3k2-RAB.yaml", "yolo11n-C3k2-RAB.yaml", 
-    #"yolo11n-C2BRA.yaml", "yolo11s-C2BRA.yaml", "yolo11m-C2BRA.yaml", "yolo11l-C2BRA.yaml", "yolo11x-C2BRA.yaml", 
-    #"yolo11n-C2CGA.yaml", "yolo11s-C2CGA.yaml", "yolo11m-C2CGA.yaml", "yolo11l-C2CGA.yaml", "yolo11x-C2CGA.yaml", 
-    #"yolo11l-ReCalibrationFPN-P2345.yaml", "yolo11x-ReCalibrationFPN-P2345.yaml", 
-    #"yolo11x-C3k2-LFE.yaml", 
-    #"yolo11l-C2BRA.yaml", "yolo11x-C2BRA.yaml",
-    #"yolo11n-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11s-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11m-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11l-C3k2-MutilScaleEdgeInformationSelect.yaml", "yolo11x-C3k2-MutilScaleEdgeInformationSelect.yaml"
-    "yolo11x-C3k2-RAB.yaml", "yolo11l-C3k2-RAB.yaml", "yolo11m-C3k2-RAB.yaml", "yolo11s-C3k2-RAB.yaml", "yolo11n-C3k2-RAB.yaml", 
-    "yolo11n-C2CGA.yaml", "yolo11s-C2CGA.yaml", "yolo11m-C2CGA.yaml", "yolo11l-C2CGA.yaml", "yolo11x-C2CGA.yaml"
+    #"yolo11n-C3k2-LFE.yaml",
+    #"yolo11-C3k2-HDRAB.yaml",nan 
+    #"yolo11-C3k2-RAB.yaml", nan
+    #"yolo11-C2BRA.yaml"
+    #"yolo11-C2CGA.yaml"
+    #"yolo11-C3k2-LFE.yaml", 
+    #"yolo11n-C3k2-MutilScaleEdgeInformationSelect.yaml",
+    #"yolo11-C3k2-RAB.yaml", nan
 ]
 
 datasets = {
