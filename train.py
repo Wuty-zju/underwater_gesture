@@ -25,14 +25,22 @@ model_configs = [
     #"yolo11-C2CGA.yaml",                # sample跑完
     #"yolo11-C3k2-LFE.yaml",                 # sample跑完
     #"yolo11n-C3k2-MutilScaleEdgeInformationSelect.yaml",                 # sample跑完
+    
     #"yolo11n-C3k2-RAB.yaml", "yolo11s-C3k2-RAB.yaml", "yolo11m-C3k2-RAB.yaml", "yolo11l-C3k2-RAB.yaml", "yolo11x-C3k2-RAB.yaml", # nan（关闭amp试试）
     #"yolo11n-C3k2-HDRAB.yaml", "yolo11s-C3k2-HDRAB.yaml", "yolo11m-C3k2-HDRAB.yaml", "yolo11l-C3k2-HDRAB.yaml", "yolo11x-C3k2-HDRAB.yaml", # nan（关闭amp试试）
     #"yolo11n-C3k2-RAB.yaml", "yolo11s-C3k2-RAB.yaml", "yolo11m-C3k2-RAB.yaml", "yolo11l-C3k2-RAB.yaml", "yolo11x-C3k2-RAB.yaml", # nan（关闭amp试试）
+    
+    #"yolo11-C3k2-EMSC.yaml",
+    #"yolo11-C3k2-EMSCP.yaml",
+    #"yolo11-ReCalibrationFPN-P3456.yaml",
+    #"yolo11-C3k2-MSBlock.yaml",
+    #"yolo11-ContextGuideFPN.yaml",
     #"yolo11-C3k2-DLKA.yaml", 
     #"yolo11-ASF-P2.yaml", 
     #"yolo11-C3k2-ContextGuided.yaml", 
     #"yolo11-AIFI.yaml", 
     #"yolo11-C3k2-RFAConv.yaml", 
+    #"yolo11-nmsfree.yaml",
 ]
 
 datasets = {
