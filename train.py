@@ -42,7 +42,7 @@ datasets = {
 
 hyperparameters = {
     "device": [0],             # 设备: 单GPU ("0"), 多GPU ("0,1"), 或 CPU ("cpu")
-    "amp": False,              # 是否启用混合精度训练(默认启用)
+    "amp": True,              # 是否启用混合精度训练(默认启用)
     "epochs": 500,             # 训练轮数
     "batch_size": 8,          # 每批次图像数量
     "imgsz": 640,              # 输入图像尺寸
