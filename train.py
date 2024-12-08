@@ -8,9 +8,10 @@ model_configs = [
     #"yolov9t.yaml", "yolov9s.yaml", "yolov9m.yaml", "yolov9c.yaml", "yolov9e.yaml",           # YOLOv9 模型
     #"yolov10n.yaml", "yolov10s.yaml", "yolov10m.yaml", "yolov10l.yaml", "yolov10x.yaml",      # YOLOv10 模型
     #"yolo11n.yaml", "yolo11s.yaml", "yolo11m.yaml", "yolo11l.yaml", "yolo11x.yaml"            # YOLO11 模型
+    
     #"yolo11-C3k2-AdditiveBlock.yaml",          # sample跑完
     #"yolo11-C3k2-SCConv.yaml",         # sample跑完
-    #"yolo11-C3k2-KAN.yaml",
+    #"yolo11-C3k2-KAN.yaml",            # annot access local variable 'kan' where it is not associated with a value(m/l/x)
     #"yolo11-ReCalibrationFPN-P345.yaml",         # sample跑完
     #"yolo11-WaveletPool.yaml",         # sample跑完
     #"yolo11-efficientViT.yaml",            # sample跑完（缺n/s）
@@ -23,7 +24,6 @@ model_configs = [
     #"yolo11n-C3k2-LFE.yaml",                # sample跑完
     #"yolo11-C2BRA.yaml",                # sample跑完
     #"yolo11-C2CGA.yaml",                # sample跑完
-    #"yolo11-C3k2-LFE.yaml",                 # sample跑完
     #"yolo11n-C3k2-MutilScaleEdgeInformationSelect.yaml",                 # sample跑完
     
     #"yolo11n-C3k2-RAB.yaml", "yolo11s-C3k2-RAB.yaml", "yolo11m-C3k2-RAB.yaml", "yolo11l-C3k2-RAB.yaml", "yolo11x-C3k2-RAB.yaml", # nan（关闭amp试试）
