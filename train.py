@@ -21,17 +21,17 @@ model_configs = [
     #"yolo11-C3k2-EIEM.yaml",           # sample跑完（缺l/x）
     #"yolo11-ReCalibrationFPN-P2345.yaml",                # sample跑完
     #"yolo11-FeaturePyramidSharedConv.yaml",                # sample跑完
-    #"yolo11n-C3k2-LFE.yaml",                # sample跑完
+    #"yolo11-C3k2-LFE.yaml",                # sample跑完
     #"yolo11-C2BRA.yaml",                # sample跑完
     #"yolo11-C2CGA.yaml",                # sample跑完
-    #"yolo11n-C3k2-MutilScaleEdgeInformationSelect.yaml",                 # sample跑完
+    #"yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml",                 # sample跑完
+    #"yolo11-C3k2-RAB.yaml",           # sample跑完 nan（关闭amp）
     
-    #"yolo11n-C3k2-RAB.yaml", "yolo11s-C3k2-RAB.yaml", "yolo11m-C3k2-RAB.yaml", "yolo11l-C3k2-RAB.yaml", "yolo11x-C3k2-RAB.yaml", # nan（关闭amp试试）
-    #"yolo11n-C3k2-HDRAB.yaml", "yolo11s-C3k2-HDRAB.yaml", "yolo11m-C3k2-HDRAB.yaml", "yolo11l-C3k2-HDRAB.yaml", "yolo11x-C3k2-HDRAB.yaml", # nan（关闭amp试试）
-    #"yolo11n-C3k2-RAB.yaml", "yolo11s-C3k2-RAB.yaml", "yolo11m-C3k2-RAB.yaml", "yolo11l-C3k2-RAB.yaml", "yolo11x-C3k2-RAB.yaml", # nan（关闭amp试试）
+    #"yolo11x-C3k2-HDRAB.yaml", "yolo11l-C3k2-HDRAB.yaml", "yolo11m-C3k2-HDRAB.yaml", "yolo11s-C3k2-HDRAB.yaml", "yolo11n-C3k2-HDRAB.yaml", # nan（关闭amp）
     
-    #"yolo11-C3k2-EMSC.yaml",
-    #"yolo11-C3k2-EMSCP.yaml",
+    "yolo11n-C3k2-EMSC.yaml", "yolo11s-C3k2-EMSC.yaml", "yolo11m-C3k2-EMSC.yaml", "yolo11l-C3k2-EMSC.yaml", "yolo11x-C3k2-EMSC.yaml",
+    "yolo11n-C3k2-EMSCP.yaml", "yolo11s-C3k2-EMSCP.yaml", "yolo11m-C3k2-EMSCP.yaml", "yolo11l-C3k2-EMSCP.yaml", "yolo11x-C3k2-EMSCP.yaml",
+    
     #"yolo11-ReCalibrationFPN-P3456.yaml",
     #"yolo11-C3k2-MSBlock.yaml",
     #"yolo11-ContextGuideFPN.yaml",
