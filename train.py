@@ -29,9 +29,8 @@ model_configs = [
     #"yolo11x-C3k2-HDRAB.yaml", "yolo11l-C3k2-HDRAB.yaml", "yolo11m-C3k2-HDRAB.yaml", "yolo11s-C3k2-HDRAB.yaml", "yolo11n-C3k2-HDRAB.yaml", # 尝试amp（nan,关闭amp，x模型val出错）
     
     #"yolo11n-C3k2-EMSC.yaml", "yolo11s-C3k2-EMSC.yaml", "yolo11x-C3k2-EMSC.yaml", "yolo11l-C3k2-EMSC.yaml", "yolo11m-C3k2-EMSC.yaml",
-    "yolo11n-C3k2-EMSCP.yaml", "yolo11s-C3k2-EMSCP.yaml", "yolo11m-C3k2-EMSCP.yaml", "yolo11l-C3k2-EMSCP.yaml", "yolo11x-C3k2-EMSCP.yaml",
-    
-    "yolo11n-C2DPB.yaml", "yolo11s-C2DPB.yaml", "yolo11m-C2DPB.yaml", "yolo11l-C2DPB.yaml", "yolo11x-C2DPB.yaml", 
+    #"yolo11n-C3k2-EMSCP.yaml", "yolo11s-C3k2-EMSCP.yaml", "yolo11m-C3k2-EMSCP.yaml", "yolo11l-C3k2-EMSCP.yaml", "yolo11x-C3k2-EMSCP.yaml",
+    #"yolo11n-C2DPB.yaml", "yolo11s-C2DPB.yaml", "yolo11m-C2DPB.yaml", "yolo11l-C2DPB.yaml", "yolo11x-C2DPB.yaml", 
     
     #"yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", 
     #"yolo11-C3k2-CTA.yaml", 
