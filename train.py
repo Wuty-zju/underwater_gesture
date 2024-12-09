@@ -25,12 +25,24 @@ model_configs = [
     #"yolo11-C2BRA.yaml",                # sample跑完
     #"yolo11-C2CGA.yaml",                # sample跑完
     #"yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml",                 # sample跑完
-    #"yolo11-C3k2-RAB.yaml",           # sample跑完 nan（关闭amp）
+    #"yolo11-C3k2-RAB.yaml",           # sample跑完 nan（关闭amp，x模型val出错）
+    #"yolo11x-C3k2-HDRAB.yaml", "yolo11l-C3k2-HDRAB.yaml", "yolo11m-C3k2-HDRAB.yaml", "yolo11s-C3k2-HDRAB.yaml", "yolo11n-C3k2-HDRAB.yaml", # 尝试amp（nan,关闭amp，x模型val出错）
     
-    #"yolo11x-C3k2-HDRAB.yaml", "yolo11l-C3k2-HDRAB.yaml", "yolo11m-C3k2-HDRAB.yaml", "yolo11s-C3k2-HDRAB.yaml", "yolo11n-C3k2-HDRAB.yaml", # nan（关闭amp）
-    
-    "yolo11n-C3k2-EMSC.yaml", "yolo11s-C3k2-EMSC.yaml", "yolo11m-C3k2-EMSC.yaml", "yolo11l-C3k2-EMSC.yaml", "yolo11x-C3k2-EMSC.yaml",
+    #"yolo11n-C3k2-EMSC.yaml", "yolo11s-C3k2-EMSC.yaml", "yolo11x-C3k2-EMSC.yaml", "yolo11l-C3k2-EMSC.yaml", "yolo11m-C3k2-EMSC.yaml",
     "yolo11n-C3k2-EMSCP.yaml", "yolo11s-C3k2-EMSCP.yaml", "yolo11m-C3k2-EMSCP.yaml", "yolo11l-C3k2-EMSCP.yaml", "yolo11x-C3k2-EMSCP.yaml",
+    
+    "yolo11n-C2DPB.yaml", "yolo11s-C2DPB.yaml", "yolo11m-C2DPB.yaml", "yolo11l-C2DPB.yaml", "yolo11x-C2DPB.yaml", 
+    
+    #"yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", 
+    #"yolo11-C3k2-CTA.yaml", 
+    
+    #"yolo11-GlobalEdgeInformationTransfer1.yaml", 
+    #"yolo11-GlobalEdgeInformationTransfer2.yaml", 
+    #"yolo11-GlobalEdgeInformationTransfer3.yaml", 
+    
+    #"yolo11-C3k2-IDWC.yaml", 
+    #"yolo11-C3k2-IDWD.yaml", 
+    #"yolo11-inceptionnext.yaml", 
     
     #"yolo11-ReCalibrationFPN-P3456.yaml",
     #"yolo11-C3k2-MSBlock.yaml",
@@ -56,14 +68,14 @@ datasets = {
 
 hyperparameters = {
     "device": [0],             # 设备: 单GPU ("0"), 多GPU ("0,1"), 或 CPU ("cpu")
-    "amp": True,              # 是否启用混合精度训练(默认启用)
+    "amp": True,               # 是否启用混合精度训练(默认启用)
     "epochs": 500,             # 训练轮数
-    "batch_size": 8,          # 每批次图像数量
+    "batch_size": 8,           # 每批次图像数量
     "imgsz": 640,              # 输入图像尺寸
     "patience": 0,             # 提前停止的耐心值
     "pretrained": False,       # 是否使用预训练权重
     "save": True,              # 是否保存训练结果
-    "plots": True,             # 是否生成训练曲线
+    "plots": True              # 是否生成训练曲线
 }
 
 def train_model(train_model_config, data_path, hyperparameters, train_save_dir, name="train"):
