@@ -26,14 +26,14 @@ model_configs = [
     #"yolo11-C2CGA.yaml",                # sample跑完
     #"yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml",                 # sample跑完
     #"yolo11-C3k2-RAB.yaml",           # sample跑完 nan（关闭amp，x模型val出错）
-    #"yolo11x-C3k2-HDRAB.yaml", "yolo11l-C3k2-HDRAB.yaml", "yolo11m-C3k2-HDRAB.yaml", "yolo11s-C3k2-HDRAB.yaml", "yolo11n-C3k2-HDRAB.yaml", # 尝试amp（nan,关闭amp，x模型val出错）
+    #"yolo11-C3k2-HDRAB.yaml", # 尝试amp-nan（nan,关闭amp，x模型val出错）
     
     #"yolo11n-C3k2-EMSC.yaml", "yolo11s-C3k2-EMSC.yaml", "yolo11x-C3k2-EMSC.yaml", "yolo11l-C3k2-EMSC.yaml", "yolo11m-C3k2-EMSC.yaml",
     #"yolo11n-C3k2-EMSCP.yaml", "yolo11s-C3k2-EMSCP.yaml", "yolo11m-C3k2-EMSCP.yaml", "yolo11l-C3k2-EMSCP.yaml", "yolo11x-C3k2-EMSCP.yaml",
-    #"yolo11n-C2DPB.yaml", "yolo11s-C2DPB.yaml", "yolo11m-C2DPB.yaml", "yolo11l-C2DPB.yaml", "yolo11x-C2DPB.yaml", 
+    #"yolo11x-C2DPB.yaml", "yolo11l-C2DPB.yaml", "yolo11m-C2DPB.yaml", "yolo11s-C2DPB.yaml", "yolo11n-C2DPB.yaml", #RuntimeError: The size of tensor a (336) must match the size of tensor b (400) at non-singleton dimension 3
     
-    #"yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", "yolo11-C3k2-SFA.yaml", 
-    #"yolo11-C3k2-CTA.yaml", 
+    "yolo11x-C3k2-SFA.yaml", "yolo11l-C3k2-SFA.yaml", "yolo11m-C3k2-SFA.yaml", "yolo11s-C3k2-SFA.yaml", "yolo11n-C3k2-SFA.yaml", 
+    "yolo11x-C3k2-CTA.yaml", "yolo11l-C3k2-CTA.yaml", "yolo11m-C3k2-CTA.yaml", "yolo11s-C3k2-CTA.yaml", "yolo11n-C3k2-CTA.yaml", 
     
     #"yolo11-GlobalEdgeInformationTransfer1.yaml", 
     #"yolo11-GlobalEdgeInformationTransfer2.yaml", 
