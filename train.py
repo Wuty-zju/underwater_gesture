@@ -4,6 +4,9 @@ import json
 import os
 
 model_configs = [
+    #"yolov3n.yaml", "yolov3s.yaml", "yolov3m.yaml", "yolov3l.yaml", "yolov3x.yaml",  
+    #"yolov5n.yaml", "yolov5s.yaml", "yolov5m.yaml", "yolov5l.yaml", "yolov5x.yaml",  
+    #"yolov6n.yaml", "yolov6s.yaml", "yolov6m.yaml", "yolov6l.yaml", "yolov6x.yaml",  
     #"yolov8n.yaml", "yolov8s.yaml", "yolov8m.yaml", "yolov8l.yaml", "yolov8x.yaml",           # YOLOv8 模型
     #"yolov9t.yaml", "yolov9s.yaml", "yolov9m.yaml", "yolov9c.yaml", "yolov9e.yaml",           # YOLOv9 模型
     #"yolov10n.yaml", "yolov10s.yaml", "yolov10m.yaml", "yolov10l.yaml", "yolov10x.yaml",      # YOLOv10 模型
@@ -49,8 +52,8 @@ model_configs = [
     
     
     #"yolo11x-C3k2-DLKA.yaml", "yolo11l-C3k2-DLKA.yaml", "yolo11m-C3k2-DLKA.yaml", "yolo11s-C3k2-DLKA.yaml", "yolo11n-C3k2-DLKA.yaml", #bash: 第 1 行： 228880 段错误               （核心已转储） python train.py
-    "yolo11x-nmsfree.yaml", "yolo11l-nmsfree.yaml", "yolo11m-nmsfree.yaml", "yolo11s-nmsfree.yaml", "yolo11n-nmsfree.yaml",
-    "yolo11x-goldyolo-asf.yaml", "yolo11l-goldyolo-asf.yaml", "yolo11m-goldyolo-asf.yaml", "yolo11s-goldyolo-asf.yaml", "yolo11n-goldyolo-asf.yaml",
+    #"yolo11x-nmsfree.yaml", "yolo11l-nmsfree.yaml", "yolo11m-nmsfree.yaml", "yolo11s-nmsfree.yaml", "yolo11n-nmsfree.yaml",
+    #"yolo11x-goldyolo-asf.yaml", "yolo11l-goldyolo-asf.yaml", "yolo11m-goldyolo-asf.yaml", "yolo11s-goldyolo-asf.yaml", "yolo11n-goldyolo-asf.yaml",
     #"yolo11-FDPN.yaml",
     #"yolo11-FDPN-TADDH.yaml",
     #"yolo11-FDPN-DASI.yaml",
