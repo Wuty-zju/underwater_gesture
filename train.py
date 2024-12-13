@@ -18,36 +18,36 @@ model_configs = [
     #"yolo11-C3k2-WTConv.yaml",         # sample跑完
     #"yolo11-LADH.yaml",                # sample跑完
     #"yolo11-RSCD.yaml",                # sample跑完
-    #"yolo11-C3k2-EIEM.yaml",           # sample跑完（缺l/x）
+    #"yolo11-C3k2-EIEM.yaml",           # sample跑完
     #"yolo11-ReCalibrationFPN-P2345.yaml",                # sample跑完
     #"yolo11-FeaturePyramidSharedConv.yaml",                # sample跑完
     #"yolo11-C3k2-LFE.yaml",                # sample跑完
     #"yolo11-C2BRA.yaml",                # sample跑完
     #"yolo11-C2CGA.yaml",                # sample跑完
     #"yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml",                 # sample跑完
+    
     #"yolo11-C3k2-RAB.yaml",           # sample跑完 nan（关闭amp，x模型val出错）
     #"yolo11-C3k2-HDRAB.yaml", # 尝试amp-nan（nan,关闭amp，x模型val出错）
     #"yolo11x-C2DPB.yaml", "yolo11l-C2DPB.yaml", "yolo11m-C2DPB.yaml", "yolo11s-C2DPB.yaml", "yolo11n-C2DPB.yaml", #RuntimeError: The size of tensor a (336) must match the size of tensor b (400) at non-singleton dimension 3
     #"yolo11x-C3k2-SFA.yaml", "yolo11l-C3k2-SFA.yaml", "yolo11m-C3k2-SFA.yaml", "yolo11s-C3k2-SFA.yaml", "yolo11n-C3k2-SFA.yaml", nan
 
-    #"yolo11n-C3k2-EMSC.yaml", "yolo11s-C3k2-EMSC.yaml", "yolo11m-C3k2-EMSC.yaml", "yolo11l-C3k2-EMSC.yaml", "yolo11x-C3k2-EMSC.yaml",
-    #"yolo11n-C3k2-EMSCP.yaml", "yolo11s-C3k2-EMSCP.yaml", "yolo11m-C3k2-EMSCP.yaml", "yolo11l-C3k2-EMSCP.yaml", "yolo11x-C3k2-EMSCP.yaml",
-    #"yolo11x-C3k2-CTA.yaml", "yolo11l-C3k2-CTA.yaml", "yolo11m-C3k2-CTA.yaml", "yolo11s-C3k2-CTA.yaml", "yolo11n-C3k2-CTA.yaml", 
-    
+    #"yolo11n-C3k2-EMSC.yaml",                 # sample跑完
+    #"yolo11n-C3k2-EMSCP.yaml",                 # sample跑完
+    #"yolo11x-C3k2-CTA.yaml",                  # sample跑完
 
     #"yolo11-ReCalibrationFPN-P3456.yaml",
 
-    
-    #"yolo11x-GlobalEdgeInformationTransfer1.yaml", "yolo11l-GlobalEdgeInformationTransfer1.yaml", "yolo11m-GlobalEdgeInformationTransfer1.yaml", "yolo11s-GlobalEdgeInformationTransfer1.yaml", "yolo11n-GlobalEdgeInformationTransfer1.yaml", 
-    #"yolo11x-GlobalEdgeInformationTransfer2.yaml", "yolo11l-GlobalEdgeInformationTransfer2.yaml", "yolo11m-GlobalEdgeInformationTransfer2.yaml", "yolo11s-GlobalEdgeInformationTransfer2.yaml", "yolo11n-GlobalEdgeInformationTransfer2.yaml", 
+    #"yolo11x-GlobalEdgeInformationTransfer1.yaml",                  # sample跑完
+    #"yolo11x-GlobalEdgeInformationTransfer2.yaml",                   # sample跑完
     #"yolo11x-GlobalEdgeInformationTransfer3.yaml", "yolo11l-GlobalEdgeInformationTransfer3.yaml", "yolo11m-GlobalEdgeInformationTransfer3.yaml", "yolo11s-GlobalEdgeInformationTransfer3.yaml", "yolo11n-GlobalEdgeInformationTransfer3.yaml", 
+    #"yolo11x-C3k2-MSBlock.yaml", "yolo11l-C3k2-MSBlock.yaml", "yolo11m-C3k2-MSBlock.yaml", "yolo11s-C3k2-MSBlock.yaml", "yolo11n-C3k2-MSBlock.yaml", 
+    #"yolo11x-ContextGuideFPN.yaml", "yolo11l-ContextGuideFPN.yaml", "yolo11m-ContextGuideFPN.yaml", "yolo11s-ContextGuideFPN.yaml", "yolo11n-ContextGuideFPN.yaml", 
     
-    #"yolo11-C3k2-IDWC.yaml", 
-    #"yolo11-C3k2-IDWD.yaml", 
-    #"yolo11-inceptionnext.yaml", 
+    #"yolo11n-C3k2-IDWC.yaml", "yolo11s-C3k2-IDWC.yaml", "yolo11m-C3k2-IDWC.yaml", "yolo11l-C3k2-IDWC.yaml", "yolo11x-C3k2-IDWC.yaml", 
+    "yolo11n-C3k2-IDWB.yaml", "yolo11s-C3k2-IDWB.yaml", "yolo11m-C3k2-IDWB.yaml", "yolo11l-C3k2-IDWB.yaml", "yolo11x-C3k2-IDWB.yaml", #对应"yolo11-C3k2-IDWD.yaml"
+    "yolo11n-inceptionnext.yaml", "yolo11s-inceptionnext.yaml", "yolo11m-inceptionnext.yaml", "yolo11l-inceptionnext.yaml", "yolo11x-inceptionnext.yaml", 
     
-    #"yolo11-C3k2-MSBlock.yaml",
-    #"yolo11-ContextGuideFPN.yaml",
+    
     #"yolo11-C3k2-DLKA.yaml", 
     #"yolo11-FDPN.yaml",
     #"yolo11-FDPN-TADDH.yaml",
