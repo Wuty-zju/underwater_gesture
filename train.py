@@ -44,11 +44,13 @@ model_configs = [
     #"yolo11x-ContextGuideFPN.yaml", "yolo11l-ContextGuideFPN.yaml", "yolo11m-ContextGuideFPN.yaml", "yolo11s-ContextGuideFPN.yaml", "yolo11n-ContextGuideFPN.yaml", 
     
     #"yolo11n-C3k2-IDWC.yaml", "yolo11s-C3k2-IDWC.yaml", "yolo11m-C3k2-IDWC.yaml", "yolo11l-C3k2-IDWC.yaml", "yolo11x-C3k2-IDWC.yaml", 
-    "yolo11n-C3k2-IDWB.yaml", "yolo11s-C3k2-IDWB.yaml", "yolo11m-C3k2-IDWB.yaml", "yolo11l-C3k2-IDWB.yaml", "yolo11x-C3k2-IDWB.yaml", #对应"yolo11-C3k2-IDWD.yaml"
-    "yolo11n-inceptionnext.yaml", "yolo11s-inceptionnext.yaml", "yolo11m-inceptionnext.yaml", "yolo11l-inceptionnext.yaml", "yolo11x-inceptionnext.yaml", 
+    #"yolo11n-C3k2-IDWB.yaml", "yolo11s-C3k2-IDWB.yaml", "yolo11m-C3k2-IDWB.yaml", "yolo11l-C3k2-IDWB.yaml", "yolo11x-C3k2-IDWB.yaml", #对应"yolo11-C3k2-IDWD.yaml"
+    #"yolo11n-inceptionnext.yaml", "yolo11s-inceptionnext.yaml", "yolo11m-inceptionnext.yaml", "yolo11l-inceptionnext.yaml", "yolo11x-inceptionnext.yaml", 
     
     
-    #"yolo11-C3k2-DLKA.yaml", 
+    #"yolo11x-C3k2-DLKA.yaml", "yolo11l-C3k2-DLKA.yaml", "yolo11m-C3k2-DLKA.yaml", "yolo11s-C3k2-DLKA.yaml", "yolo11n-C3k2-DLKA.yaml", #bash: 第 1 行： 228880 段错误               （核心已转储） python train.py
+    "yolo11x-nmsfree.yaml", "yolo11l-nmsfree.yaml", "yolo11m-nmsfree.yaml", "yolo11s-nmsfree.yaml", "yolo11n-nmsfree.yaml",
+    "yolo11x-goldyolo-asf.yaml", "yolo11l-goldyolo-asf.yaml", "yolo11m-goldyolo-asf.yaml", "yolo11s-goldyolo-asf.yaml", "yolo11n-goldyolo-asf.yaml",
     #"yolo11-FDPN.yaml",
     #"yolo11-FDPN-TADDH.yaml",
     #"yolo11-FDPN-DASI.yaml",
@@ -59,7 +61,6 @@ model_configs = [
     #"yolo11-goldyolo-asf.yaml",
     #"yolo11-AIFI.yaml", 
     #"yolo11-C3k2-RFAConv.yaml", 
-    #"yolo11-nmsfree.yaml",
 ]
 
 datasets = {
