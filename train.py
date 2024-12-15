@@ -31,39 +31,46 @@ model_configs = [
     
     #"yolo11-C3k2-RAB.yaml",           # sample跑完 nan（关闭amp，x模型val出错）
     #"yolo11-C3k2-HDRAB.yaml", # 尝试amp-nan（nan,关闭amp，x模型val出错）
-    #"yolo11x-C2DPB.yaml", "yolo11l-C2DPB.yaml", "yolo11m-C2DPB.yaml", "yolo11s-C2DPB.yaml", "yolo11n-C2DPB.yaml", #RuntimeError: The size of tensor a (336) must match the size of tensor b (400) at non-singleton dimension 3
-    #"yolo11x-C3k2-SFA.yaml", "yolo11l-C3k2-SFA.yaml", "yolo11m-C3k2-SFA.yaml", "yolo11s-C3k2-SFA.yaml", "yolo11n-C3k2-SFA.yaml", nan
+    #"yolo11-C2DPB.yaml",  #RuntimeError: The size of tensor a (336) must match the size of tensor b (400) at non-singleton dimension 3
+    #"yolo11-C3k2-SFA.yaml", # nan
+    #"yolo11x-C3k2-DLKA.yaml", #bash: 第 1 行： 228880 段错误               （核心已转储） python train.py
+    #"yolo11x-FDPN-TADDH.yaml", "yolo11l-FDPN-TADDH.yaml", "yolo11m-FDPN-TADDH.yaml", "yolo11s-FDPN-TADDH.yaml", "yolo11n-FDPN-TADDH.yaml",NameError: name 'ModulatedDeformConv2d' is not defined
 
-    #"yolo11n-C3k2-EMSC.yaml",                 # sample跑完
-    #"yolo11n-C3k2-EMSCP.yaml",                 # sample跑完
-    #"yolo11x-C3k2-CTA.yaml",                  # sample跑完
 
-    #"yolo11-ReCalibrationFPN-P3456.yaml",
+    #"yolo11-C3k2-EMSC.yaml",                 # sample跑完
+    #"yolo11-C3k2-EMSCP.yaml",                 # sample跑完
+    #"yolo11-C3k2-CTA.yaml",                  # sample跑完
 
-    #"yolo11x-GlobalEdgeInformationTransfer1.yaml",                  # sample跑完
-    #"yolo11x-GlobalEdgeInformationTransfer2.yaml",                   # sample跑完
-    #"yolo11x-GlobalEdgeInformationTransfer3.yaml", "yolo11l-GlobalEdgeInformationTransfer3.yaml", "yolo11m-GlobalEdgeInformationTransfer3.yaml", "yolo11s-GlobalEdgeInformationTransfer3.yaml", "yolo11n-GlobalEdgeInformationTransfer3.yaml", 
-    #"yolo11x-C3k2-MSBlock.yaml", "yolo11l-C3k2-MSBlock.yaml", "yolo11m-C3k2-MSBlock.yaml", "yolo11s-C3k2-MSBlock.yaml", "yolo11n-C3k2-MSBlock.yaml", 
-    #"yolo11x-ContextGuideFPN.yaml", "yolo11l-ContextGuideFPN.yaml", "yolo11m-ContextGuideFPN.yaml", "yolo11s-ContextGuideFPN.yaml", "yolo11n-ContextGuideFPN.yaml", 
+    #"yolo11-ReCalibrationFPN-P3456.yaml",        # sample跑完(缺x)
+
+    #"yolo11-GlobalEdgeInformationTransfer1.yaml",                  # sample跑完
+    #"yolo11-GlobalEdgeInformationTransfer2.yaml",                   # sample跑完
+    #"yolo11-GlobalEdgeInformationTransfer3.yaml",                   # sample跑完
+    #"yolo11-C3k2-MSBlock.yaml",                   # sample跑完
+    #"yolo11-ContextGuideFPN.yaml",                  # sample跑完
     
-    #"yolo11n-C3k2-IDWC.yaml", "yolo11s-C3k2-IDWC.yaml", "yolo11m-C3k2-IDWC.yaml", "yolo11l-C3k2-IDWC.yaml", "yolo11x-C3k2-IDWC.yaml", 
-    #"yolo11n-C3k2-IDWB.yaml", "yolo11s-C3k2-IDWB.yaml", "yolo11m-C3k2-IDWB.yaml", "yolo11l-C3k2-IDWB.yaml", "yolo11x-C3k2-IDWB.yaml", #对应"yolo11-C3k2-IDWD.yaml"
-    #"yolo11n-inceptionnext.yaml", "yolo11s-inceptionnext.yaml", "yolo11m-inceptionnext.yaml", "yolo11l-inceptionnext.yaml", "yolo11x-inceptionnext.yaml", 
+    #"yolo11-C3k2-IDWC.yaml",                  # sample跑完
+    #"yolo11-C3k2-IDWB.yaml",                   # sample跑完，对应"yolo11-C3k2-IDWD.yaml"
+    #"yolo11-inceptionnext.yaml",                   # sample跑完  
+    #"yolo11x-FDPN.yaml",                    # sample跑完
+    #"yolo11n-ASF-P2.yaml",                    # sample跑完
     
-    
-    #"yolo11x-C3k2-DLKA.yaml", "yolo11l-C3k2-DLKA.yaml", "yolo11m-C3k2-DLKA.yaml", "yolo11s-C3k2-DLKA.yaml", "yolo11n-C3k2-DLKA.yaml", #bash: 第 1 行： 228880 段错误               （核心已转储） python train.py
     #"yolo11x-nmsfree.yaml", "yolo11l-nmsfree.yaml", "yolo11m-nmsfree.yaml", "yolo11s-nmsfree.yaml", "yolo11n-nmsfree.yaml",
     #"yolo11x-goldyolo-asf.yaml", "yolo11l-goldyolo-asf.yaml", "yolo11m-goldyolo-asf.yaml", "yolo11s-goldyolo-asf.yaml", "yolo11n-goldyolo-asf.yaml",
-    #"yolo11-FDPN.yaml",
-    #"yolo11-FDPN-TADDH.yaml",
-    #"yolo11-FDPN-DASI.yaml",
-    #"yolo11-ASF-P2.yaml", 
-    #"yolo11-C3k2-ContextGuided.yaml", 
-    #"yolo11-C3k2-DCNV2-Dynamic.yaml",
-    #"yolo11-EIEStem.yaml",
-    #"yolo11-goldyolo-asf.yaml",
-    #"yolo11-AIFI.yaml", 
-    #"yolo11-C3k2-RFAConv.yaml", 
+
+    #"yolo11x-FDPN-DASI.yaml", "yolo11l-FDPN-DASI.yaml", "yolo11m-FDPN-DASI.yaml", "yolo11s-FDPN-DASI.yaml", "yolo11n-FDPN-DASI.yaml",
+    #"yolo11x-EIEStem.yaml", "yolo11l-EIEStem.yaml", "yolo11m-EIEStem.yaml", "yolo11s-EIEStem.yaml", "yolo11n-EIEStem.yaml", 
+    
+    #"yolo11n-C3k2-ContextGuided.yaml", "yolo11s-C3k2-ContextGuided.yaml", "yolo11m-C3k2-ContextGuided.yaml", "yolo11l-C3k2-ContextGuided.yaml", "yolo11x-C3k2-ContextGuided.yaml", 
+    #"yolo11n-C3k2-DCNV2-Dynamic.yaml", "yolo11s-C3k2-DCNV2-Dynamic.yaml", "yolo11m-C3k2-DCNV2-Dynamic.yaml", "yolo11l-C3k2-DCNV2-Dynamic.yaml", "yolo11x-C3k2-DCNV2-Dynamic.yaml", 
+    #"yolo11n-AIFI.yaml", "yolo11s-AIFI.yaml", "yolo11m-AIFI.yaml", "yolo11l-AIFI.yaml", "yolo11x-AIFI.yaml", 
+    #"yolo11n-C3k2-RFAConv.yaml", "yolo11s-C3k2-RFAConv.yaml", "yolo11m-C3k2-RFAConv.yaml", "yolo11l-C3k2-RFAConv.yaml", "yolo11x-C3k2-RFAConv.yaml", 
+    
+    #"yolo11-C3k2-Faster.yaml",
+    #"yolo11-C3k2-Faster-EMA.yaml",
+    #"yolo11-C3k2-ODConv.yaml",
+    #"yolo11-C3k2-DBB.yaml",
+    #"yolo11-slimneck.yaml",
 ]
 
 datasets = {
