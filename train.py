@@ -62,9 +62,9 @@ model_configs = [
     #"yolo11x-EIEStem.yaml", "yolo11l-EIEStem.yaml", "yolo11m-EIEStem.yaml", "yolo11s-EIEStem.yaml", "yolo11n-EIEStem.yaml", 
     
     #"yolo11n-C3k2-ContextGuided.yaml", "yolo11s-C3k2-ContextGuided.yaml", "yolo11m-C3k2-ContextGuided.yaml", "yolo11l-C3k2-ContextGuided.yaml", "yolo11x-C3k2-ContextGuided.yaml", 
-    #"yolo11n-C3k2-DCNV2-Dynamic.yaml", "yolo11s-C3k2-DCNV2-Dynamic.yaml", "yolo11m-C3k2-DCNV2-Dynamic.yaml", "yolo11l-C3k2-DCNV2-Dynamic.yaml", "yolo11x-C3k2-DCNV2-Dynamic.yaml", 
-    #"yolo11n-AIFI.yaml", "yolo11s-AIFI.yaml", "yolo11m-AIFI.yaml", "yolo11l-AIFI.yaml", "yolo11x-AIFI.yaml", 
-    #"yolo11n-C3k2-RFAConv.yaml", "yolo11s-C3k2-RFAConv.yaml", "yolo11m-C3k2-RFAConv.yaml", "yolo11l-C3k2-RFAConv.yaml", "yolo11x-C3k2-RFAConv.yaml", 
+    #"yolo11n-C3k2-DCNV2-Dynamic.yaml", "yolo11s-C3k2-DCNV2-Dynamic.yaml", "yolo11m-C3k2-DCNV2-Dynamic.yaml", "yolo11l-C3k2-DCNV2-Dynamic.yaml", "yolo11x-C3k2-DCNV2-Dynamic.yaml", bash: 第 1 行： 29787 段错误               （核心已转储） python train.py
+    "yolo11n-AIFI.yaml", "yolo11s-AIFI.yaml", "yolo11m-AIFI.yaml", "yolo11l-AIFI.yaml", "yolo11x-AIFI.yaml", 
+    "yolo11n-C3k2-RFAConv.yaml", "yolo11s-C3k2-RFAConv.yaml", "yolo11m-C3k2-RFAConv.yaml", "yolo11l-C3k2-RFAConv.yaml", "yolo11x-C3k2-RFAConv.yaml", 
     
     #"yolo11-C3k2-Faster.yaml",
     #"yolo11-C3k2-Faster-EMA.yaml",
