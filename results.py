@@ -93,7 +93,7 @@ def main():
     ])
     
     # 保存为CSV文件
-    output_csv = 'results.csv'
+    output_csv = 'runs/results.csv'
     df.to_csv(output_csv, index=False)
     print(f"训练结果已汇总到 {output_csv}")
 
