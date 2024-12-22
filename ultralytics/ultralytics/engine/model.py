@@ -1126,3 +1126,13 @@ class Model(nn.Module):
             description of the expected behavior and structure.
         """
         raise NotImplementedError("Please provide task map for your model!")
+
+    def profile(self, imgsz):
+        if type(imgsz) is int:
+            inputs = torch.randn((2, 3, imgsz, imgsz))
+        else:
+            inputs = torch.randn((2, 3, imgsz[0], imgsz[1]))
+        if next(self.model.parameters()).device.type == 'cuda':
+            return self.model.predict(inputs.to(torch.device('cuda')), profile=True)
+        else:
+            self.model.predict(inputs, profile=True)

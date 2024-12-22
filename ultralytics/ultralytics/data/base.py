@@ -14,8 +14,8 @@ import numpy as np
 import psutil
 from torch.utils.data import Dataset
 
-from ultralytics.data.utils import FORMATS_HELP_MSG, HELP_URL, IMG_FORMATS
 from ultralytics.utils import DEFAULT_CFG, LOCAL_RANK, LOGGER, NUM_THREADS, TQDM
+from .utils import FORMATS_HELP_MSG, HELP_URL, IMG_FORMATS
 
 
 class BaseDataset(Dataset):
@@ -81,24 +81,20 @@ class BaseDataset(Dataset):
         if self.rect:
             assert self.batch_size is not None
             self.set_rectangle()
+        if isinstance(cache, str):
+            cache = cache.lower()
 
         # Buffer thread for mosaic images
         self.buffer = []  # buffer size = batch size
         self.max_buffer_length = min((self.ni, self.batch_size * 8, 1000)) if self.augment else 0
 
-        # Cache images (options are cache = True, False, None, "ram", "disk")
+        # Cache images
+        if cache == "ram" and not self.check_cache_ram():
+            cache = False
         self.ims, self.im_hw0, self.im_hw = [None] * self.ni, [None] * self.ni, [None] * self.ni
         self.npy_files = [Path(f).with_suffix(".npy") for f in self.im_files]
-        self.cache = cache.lower() if isinstance(cache, str) else "ram" if cache is True else None
-        if self.cache == "ram" and self.check_cache_ram():
-            if hyp.deterministic:
-                LOGGER.warning(
-                    "WARNING ⚠️ cache='ram' may produce non-deterministic training results. "
-                    "Consider cache='disk' as a deterministic alternative if your disk space allows."
-                )
-            self.cache_images()
-        elif self.cache == "disk" and self.check_cache_disk():
-            self.cache_images()
+        if cache:
+            self.cache_images(cache)
 
         # Transforms
         self.transforms = self.build_transforms(hyp=hyp)
@@ -126,7 +122,9 @@ class BaseDataset(Dataset):
         except Exception as e:
             raise FileNotFoundError(f"{self.prefix}Error loading data from {img_path}\n{HELP_URL}") from e
         if self.fraction < 1:
-            im_files = im_files[: round(len(im_files) * self.fraction)]  # retain a fraction of the dataset
+            # im_files = im_files[: round(len(im_files) * self.fraction)]
+            num_elements_to_select = round(len(im_files) * self.fraction)
+            im_files = random.sample(im_files, num_elements_to_select)
         return im_files
 
     def update_labels(self, include_class: Optional[list]):
@@ -177,29 +175,28 @@ class BaseDataset(Dataset):
             if self.augment:
                 self.ims[i], self.im_hw0[i], self.im_hw[i] = im, (h0, w0), im.shape[:2]  # im, hw_original, hw_resized
                 self.buffer.append(i)
-                if 1 < len(self.buffer) >= self.max_buffer_length:  # prevent empty buffer
+                if len(self.buffer) >= self.max_buffer_length:
                     j = self.buffer.pop(0)
-                    if self.cache != "ram":
-                        self.ims[j], self.im_hw0[j], self.im_hw[j] = None, None, None
+                    self.ims[j], self.im_hw0[j], self.im_hw[j] = None, None, None
 
             return im, (h0, w0), im.shape[:2]
 
         return self.ims[i], self.im_hw0[i], self.im_hw[i]
 
-    def cache_images(self):
+    def cache_images(self, cache):
         """Cache images to memory or disk."""
         b, gb = 0, 1 << 30  # bytes of cached images, bytes per gigabytes
-        fcn, storage = (self.cache_images_to_disk, "Disk") if self.cache == "disk" else (self.load_image, "RAM")
+        fcn = self.cache_images_to_disk if cache == "disk" else self.load_image
         with ThreadPool(NUM_THREADS) as pool:
             results = pool.imap(fcn, range(self.ni))
             pbar = TQDM(enumerate(results), total=self.ni, disable=LOCAL_RANK > 0)
             for i, x in pbar:
-                if self.cache == "disk":
+                if cache == "disk":
                     b += self.npy_files[i].stat().st_size
                 else:  # 'ram'
                     self.ims[i], self.im_hw0[i], self.im_hw[i] = x  # im, hw_orig, hw_resized = load_image(self, i)
                     b += self.ims[i].nbytes
-                pbar.desc = f"{self.prefix}Caching images ({b / gb:.1f}GB {storage})"
+                pbar.desc = f"{self.prefix}Caching images ({b / gb:.1f}GB {cache})"
             pbar.close()
 
     def cache_images_to_disk(self, i):
@@ -208,55 +205,25 @@ class BaseDataset(Dataset):
         if not f.exists():
             np.save(f.as_posix(), cv2.imread(self.im_files[i]), allow_pickle=False)
 
-    def check_cache_disk(self, safety_margin=0.5):
-        """Check image caching requirements vs available disk space."""
-        import shutil
-
-        b, gb = 0, 1 << 30  # bytes of cached images, bytes per gigabytes
-        n = min(self.ni, 30)  # extrapolate from 30 random images
-        for _ in range(n):
-            im_file = random.choice(self.im_files)
-            im = cv2.imread(im_file)
-            if im is None:
-                continue
-            b += im.nbytes
-            if not os.access(Path(im_file).parent, os.W_OK):
-                self.cache = None
-                LOGGER.info(f"{self.prefix}Skipping caching images to disk, directory not writeable ⚠️")
-                return False
-        disk_required = b * self.ni / n * (1 + safety_margin)  # bytes required to cache dataset to disk
-        total, used, free = shutil.disk_usage(Path(self.im_files[0]).parent)
-        if disk_required > free:
-            self.cache = None
-            LOGGER.info(
-                f"{self.prefix}{disk_required / gb:.1f}GB disk space required, "
-                f"with {int(safety_margin * 100)}% safety margin but only "
-                f"{free / gb:.1f}/{total / gb:.1f}GB free, not caching images to disk ⚠️"
-            )
-            return False
-        return True
-
     def check_cache_ram(self, safety_margin=0.5):
         """Check image caching requirements vs available memory."""
         b, gb = 0, 1 << 30  # bytes of cached images, bytes per gigabytes
         n = min(self.ni, 30)  # extrapolate from 30 random images
         for _ in range(n):
             im = cv2.imread(random.choice(self.im_files))  # sample image
-            if im is None:
-                continue
             ratio = self.imgsz / max(im.shape[0], im.shape[1])  # max(h, w)  # ratio
             b += im.nbytes * ratio**2
         mem_required = b * self.ni / n * (1 + safety_margin)  # GB required to cache dataset into RAM
         mem = psutil.virtual_memory()
-        if mem_required > mem.available:
-            self.cache = None
+        cache = mem_required < mem.available  # to cache or not to cache, that is the question
+        if not cache:
             LOGGER.info(
-                f"{self.prefix}{mem_required / gb:.1f}GB RAM required to cache images "
-                f"with {int(safety_margin * 100)}% safety margin but only "
-                f"{mem.available / gb:.1f}/{mem.total / gb:.1f}GB available, not caching images ⚠️"
+                f'{self.prefix}{mem_required / gb:.1f}GB RAM required to cache images '
+                f'with {int(safety_margin * 100)}% safety margin but only '
+                f'{mem.available / gb:.1f}/{mem.total / gb:.1f}GB available, '
+                f"{'caching images ✅' if cache else 'not caching images ⚠️'}"
             )
-            return False
-        return True
+        return cache
 
     def set_rectangle(self):
         """Sets the shape of bounding boxes for YOLO detections as rectangles."""
