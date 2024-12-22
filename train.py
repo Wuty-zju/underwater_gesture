@@ -10,7 +10,7 @@ model_configs = [
     #"yolov8n.yaml", "yolov8s.yaml", "yolov8m.yaml", "yolov8l.yaml", "yolov8x.yaml",           # YOLOv8 模型
     #"yolov9t.yaml", "yolov9s.yaml", "yolov9m.yaml", "yolov9c.yaml", "yolov9e.yaml",           # YOLOv9 模型
     #"yolov10n.yaml", "yolov10s.yaml", "yolov10m.yaml", "yolov10l.yaml", "yolov10x.yaml",      # YOLOv10 模型
-    #"yolo11n.yaml", "yolo11s.yaml", "yolo11m.yaml", "yolo11l.yaml", "yolo11x.yaml"            # YOLO11 模型
+    "yolo11x.yaml", "yolo11l.yaml", "yolo11m.yaml", "yolo11s.yaml", "yolo11n.yaml"            # YOLO11 模型
     
     #"yolo11-C3k2-AdditiveBlock.yaml",          # sample跑完
     #"yolo11-C3k2-SCConv.yaml",         # sample跑完
@@ -63,14 +63,14 @@ model_configs = [
     
     #"yolo11n-C3k2-ContextGuided.yaml", "yolo11s-C3k2-ContextGuided.yaml", "yolo11m-C3k2-ContextGuided.yaml", "yolo11l-C3k2-ContextGuided.yaml", "yolo11x-C3k2-ContextGuided.yaml", 
     #"yolo11n-C3k2-DCNV2-Dynamic.yaml", "yolo11s-C3k2-DCNV2-Dynamic.yaml", "yolo11m-C3k2-DCNV2-Dynamic.yaml", "yolo11l-C3k2-DCNV2-Dynamic.yaml", "yolo11x-C3k2-DCNV2-Dynamic.yaml", bash: 第 1 行： 29787 段错误               （核心已转储） python train.py
-    "yolo11n-AIFI.yaml", "yolo11s-AIFI.yaml", "yolo11m-AIFI.yaml", "yolo11l-AIFI.yaml", "yolo11x-AIFI.yaml", 
-    "yolo11n-C3k2-RFAConv.yaml", "yolo11s-C3k2-RFAConv.yaml", "yolo11m-C3k2-RFAConv.yaml", "yolo11l-C3k2-RFAConv.yaml", "yolo11x-C3k2-RFAConv.yaml", 
+    #"yolo11n-AIFI.yaml", "yolo11s-AIFI.yaml", "yolo11m-AIFI.yaml", "yolo11l-AIFI.yaml", "yolo11x-AIFI.yaml", 
+    #"yolo11n-C3k2-RFAConv.yaml", "yolo11s-C3k2-RFAConv.yaml", "yolo11m-C3k2-RFAConv.yaml", "yolo11l-C3k2-RFAConv.yaml", "yolo11x-C3k2-RFAConv.yaml", 
     
-    #"yolo11-C3k2-Faster.yaml",
-    #"yolo11-C3k2-Faster-EMA.yaml",
-    #"yolo11-C3k2-ODConv.yaml",
-    #"yolo11-C3k2-DBB.yaml",
-    #"yolo11-slimneck.yaml",
+    #"yolo11x-C3k2-Faster.yaml", "yolo11l-C3k2-Faster.yaml", "yolo11m-C3k2-Faster.yaml", "yolo11s-C3k2-Faster.yaml", "yolo11n-C3k2-Faster.yaml",
+    #"yolo11x-C3k2-Faster-EMA.yaml", "yolo11l-C3k2-Faster-EMA.yaml", "yolo11m-C3k2-Faster-EMA.yaml", "yolo11s-C3k2-Faster-EMA.yaml", "yolo11n-C3k2-Faster-EMA.yaml",
+    #"yolo11n-C3k2-ODConv.yaml", "yolo11s-C3k2-ODConv.yaml", "yolo11m-C3k2-ODConv.yaml", "yolo11l-C3k2-ODConv.yaml", "yolo11x-C3k2-ODConv.yaml", 
+    #"yolo11n-C3k2-DBB.yaml", "yolo11s-C3k2-DBB.yaml", "yolo11m-C3k2-DBB.yaml", "yolo11l-C3k2-DBB.yaml", "yolo11x-C3k2-DBB.yaml", 
+    #"yolo11n-slimneck.yaml", "yolo11s-slimneck.yaml", "yolo11m-slimneck.yaml", "yolo11l-slimneck.yaml", "yolo11x-slimneck.yaml",
 ]
 
 datasets = {
@@ -82,7 +82,7 @@ hyperparameters = {
     "device": [0],             # 设备: 单GPU ("0"), 多GPU ("0,1"), 或 CPU ("cpu")
     "amp": True,               # 是否启用混合精度训练(默认启用)
     "epochs": 500,             # 训练轮数
-    "batch_size": 8,           # 每批次图像数量
+    "batch_size": 4,           # 每批次图像数量
     "imgsz": 640,              # 输入图像尺寸
     "patience": 0,             # 提前停止的耐心值
     "pretrained": False,       # 是否使用预训练权重
