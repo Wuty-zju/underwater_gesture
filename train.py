@@ -1,4 +1,4 @@
-from ultralytics import YOLO
+from ultralytics import YOLO # type: ignore
 from datetime import datetime
 import json
 import os
@@ -14,7 +14,6 @@ model_configs = [
     
     #"yolo11-C3k2-AdditiveBlock.yaml",          # sample跑完
     #"yolo11-C3k2-SCConv.yaml",         # sample跑完
-    #"yolo11-C3k2-KAN.yaml",            # annot access local variable 'kan' where it is not associated with a value(m/l/x)
     #"yolo11-ReCalibrationFPN-P345.yaml",         # sample跑完
     #"yolo11-WaveletPool.yaml",         # sample跑完
     #"yolo11-efficientViT.yaml",            # sample跑完（缺n/s）
@@ -29,6 +28,7 @@ model_configs = [
     #"yolo11-C2CGA.yaml",                # sample跑完
     #"yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml",                 # sample跑完
     
+    #"yolo11-C3k2-KAN.yaml",            # annot access local variable 'kan' where it is not associated with a value(m/l/x)
     #"yolo11-C3k2-RAB.yaml",           # sample跑完 nan（关闭amp，x模型val出错）
     #"yolo11-C3k2-HDRAB.yaml", # 尝试amp-nan（nan,关闭amp，x模型val出错）
     #"yolo11-C2DPB.yaml",  #RuntimeError: The size of tensor a (336) must match the size of tensor b (400) at non-singleton dimension 3
@@ -41,7 +41,7 @@ model_configs = [
     #"yolo11-C3k2-EMSCP.yaml",                 # sample跑完
     #"yolo11-C3k2-CTA.yaml",                  # sample跑完
 
-    #"yolo11-ReCalibrationFPN-P3456.yaml",        # sample跑完(缺x)
+    #"yolo11-ReCalibrationFPN-P3456.yaml",        # sample跑完
 
     #"yolo11-GlobalEdgeInformationTransfer1.yaml",                  # sample跑完
     #"yolo11-GlobalEdgeInformationTransfer2.yaml",                   # sample跑完
@@ -72,9 +72,9 @@ model_configs = [
     #"yolo11n-C3k2-DBB.yaml", "yolo11s-C3k2-DBB.yaml", "yolo11m-C3k2-DBB.yaml", "yolo11l-C3k2-DBB.yaml", "yolo11x-C3k2-DBB.yaml", 
     #"yolo11n-slimneck.yaml", "yolo11s-slimneck.yaml", "yolo11m-slimneck.yaml", "yolo11l-slimneck.yaml", "yolo11x-slimneck.yaml",
     
-    "hyper-yolon.yaml" ,
-    #"yolo11-MAN.yaml", "yolo11-MAN.yaml", "yolo11-MAN.yaml", "yolo11-MAN.yaml", "yolo11-MAN.yaml", 
-    #"yolo11-hyper.yaml", "yolo11-hyper.yaml", "yolo11-hyper.yaml", "yolo11-hyper.yaml", "yolo11-hyper.yaml", 
+    "hyper-yolox.yaml", "hyper-yolol.yaml", "hyper-yolom.yaml", "hyper-yolos.yaml", "hyper-yolon.yaml", 
+    "yolo11x-MAN.yaml", "yolo11l-MAN.yaml", "yolo11m-MAN.yaml", "yolo11s-MAN.yaml", "yolo11n-MAN.yaml", 
+    "yolo11x-hyper.yaml", "yolo11l-hyper.yaml", "yolo11m-hyper.yaml", "yolo11s-hyper.yaml", "yolo11n-hyper.yaml", 
     
     #"yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", 
     #"yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", 
