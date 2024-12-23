@@ -7,10 +7,10 @@ model_configs = [
     #"yolov3n.yaml", "yolov3s.yaml", "yolov3m.yaml", "yolov3l.yaml", "yolov3x.yaml",  
     #"yolov5n.yaml", "yolov5s.yaml", "yolov5m.yaml", "yolov5l.yaml", "yolov5x.yaml",  
     #"yolov6n.yaml", "yolov6s.yaml", "yolov6m.yaml", "yolov6l.yaml", "yolov6x.yaml",  
-    #"yolov8n.yaml", "yolov8s.yaml", "yolov8m.yaml", "yolov8l.yaml", "yolov8x.yaml",           # YOLOv8 模型
-    #"yolov9t.yaml", "yolov9s.yaml", "yolov9m.yaml", "yolov9c.yaml", "yolov9e.yaml",           # YOLOv9 模型
-    #"yolov10n.yaml", "yolov10s.yaml", "yolov10m.yaml", "yolov10l.yaml", "yolov10x.yaml",      # YOLOv10 模型
-    #"yolo11x.yaml", "yolo11l.yaml", "yolo11m.yaml", "yolo11s.yaml", "yolo11n.yaml"            # YOLO11 模型
+    #"yolov8n.yaml", "yolov8s.yaml", "yolov8m.yaml", "yolov8l.yaml", "yolov8x.yaml",
+    #"yolov9t.yaml", "yolov9s.yaml", "yolov9m.yaml", "yolov9c.yaml", "yolov9e.yaml",
+    #"yolov10n.yaml", "yolov10s.yaml", "yolov10m.yaml", "yolov10l.yaml", "yolov10x.yaml",
+    #"yolov11n.yaml", "yolov11s.yaml", "yolov11m.yaml", "yolov11l.yaml", "yolov11x.yaml",
     
     #"yolo11-C3k2-AdditiveBlock.yaml",          # sample跑完
     #"yolo11-C3k2-SCConv.yaml",         # sample跑完
@@ -72,9 +72,9 @@ model_configs = [
     #"yolo11n-C3k2-DBB.yaml", "yolo11s-C3k2-DBB.yaml", "yolo11m-C3k2-DBB.yaml", "yolo11l-C3k2-DBB.yaml", "yolo11x-C3k2-DBB.yaml", 
     #"yolo11n-slimneck.yaml", "yolo11s-slimneck.yaml", "yolo11m-slimneck.yaml", "yolo11l-slimneck.yaml", "yolo11x-slimneck.yaml",
     
-    "hyper-yolox.yaml", "hyper-yolol.yaml", "hyper-yolom.yaml", "hyper-yolos.yaml", "hyper-yolon.yaml", 
-    "yolo11x-MAN.yaml", "yolo11l-MAN.yaml", "yolo11m-MAN.yaml", "yolo11s-MAN.yaml", "yolo11n-MAN.yaml", 
-    "yolo11x-hyper.yaml", "yolo11l-hyper.yaml", "yolo11m-hyper.yaml", "yolo11s-hyper.yaml", "yolo11n-hyper.yaml", 
+    #"hyper-yolox.yaml", "hyper-yolol.yaml", "hyper-yolom.yaml", "hyper-yolos.yaml", "hyper-yolon.yaml", 
+    #"yolo11x-MAN.yaml", "yolo11l-MAN.yaml", "yolo11m-MAN.yaml", "yolo11s-MAN.yaml", "yolo11n-MAN.yaml", 
+    #"yolo11x-hyper.yaml", "yolo11l-hyper.yaml", "yolo11m-hyper.yaml", "yolo11s-hyper.yaml", "yolo11n-hyper.yaml", 
     
     #"yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", 
     #"yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", 
