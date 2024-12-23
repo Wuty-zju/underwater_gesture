@@ -10,7 +10,7 @@ model_configs = [
     #"yolov8n.yaml", "yolov8s.yaml", "yolov8m.yaml", "yolov8l.yaml", "yolov8x.yaml",
     #"yolov9t.yaml", "yolov9s.yaml", "yolov9m.yaml", "yolov9c.yaml", "yolov9e.yaml",
     #"yolov10n.yaml", "yolov10s.yaml", "yolov10m.yaml", "yolov10l.yaml", "yolov10x.yaml",
-    #"yolov11n.yaml", "yolov11s.yaml", "yolov11m.yaml", "yolov11l.yaml", "yolov11x.yaml",
+    #"yolo11n.yaml", "yolo11s.yaml", "yolo11m.yaml", "yolo11l.yaml", "yolo11x.yaml",
     
     #"yolo11-C3k2-AdditiveBlock.yaml",          # sample跑完
     #"yolo11-C3k2-SCConv.yaml",         # sample跑完
@@ -35,7 +35,7 @@ model_configs = [
     #"yolo11-C3k2-SFA.yaml", # nan
     #"yolo11x-C3k2-DLKA.yaml", #bash: 第 1 行： 228880 段错误               （核心已转储） python train.py
     #"yolo11x-FDPN-TADDH.yaml", "yolo11l-FDPN-TADDH.yaml", "yolo11m-FDPN-TADDH.yaml", "yolo11s-FDPN-TADDH.yaml", "yolo11n-FDPN-TADDH.yaml",NameError: name 'ModulatedDeformConv2d' is not defined
-
+    #"yolo11n-C3k2-DCNV2-Dynamic.yaml", "yolo11s-C3k2-DCNV2-Dynamic.yaml", "yolo11m-C3k2-DCNV2-Dynamic.yaml", "yolo11l-C3k2-DCNV2-Dynamic.yaml", "yolo11x-C3k2-DCNV2-Dynamic.yaml", bash: 第 1 行： 29787 段错误               （核心已转储） python train.py
 
     #"yolo11-C3k2-EMSC.yaml",                 # sample跑完
     #"yolo11-C3k2-EMSCP.yaml",                 # sample跑完
@@ -62,7 +62,6 @@ model_configs = [
     #"yolo11x-EIEStem.yaml", "yolo11l-EIEStem.yaml", "yolo11m-EIEStem.yaml", "yolo11s-EIEStem.yaml", "yolo11n-EIEStem.yaml", 
     
     #"yolo11n-C3k2-ContextGuided.yaml", "yolo11s-C3k2-ContextGuided.yaml", "yolo11m-C3k2-ContextGuided.yaml", "yolo11l-C3k2-ContextGuided.yaml", "yolo11x-C3k2-ContextGuided.yaml", 
-    #"yolo11n-C3k2-DCNV2-Dynamic.yaml", "yolo11s-C3k2-DCNV2-Dynamic.yaml", "yolo11m-C3k2-DCNV2-Dynamic.yaml", "yolo11l-C3k2-DCNV2-Dynamic.yaml", "yolo11x-C3k2-DCNV2-Dynamic.yaml", bash: 第 1 行： 29787 段错误               （核心已转储） python train.py
     #"yolo11n-AIFI.yaml", "yolo11s-AIFI.yaml", "yolo11m-AIFI.yaml", "yolo11l-AIFI.yaml", "yolo11x-AIFI.yaml", 
     #"yolo11n-C3k2-RFAConv.yaml", "yolo11s-C3k2-RFAConv.yaml", "yolo11m-C3k2-RFAConv.yaml", "yolo11l-C3k2-RFAConv.yaml", "yolo11x-C3k2-RFAConv.yaml", 
     
@@ -72,10 +71,11 @@ model_configs = [
     #"yolo11n-C3k2-DBB.yaml", "yolo11s-C3k2-DBB.yaml", "yolo11m-C3k2-DBB.yaml", "yolo11l-C3k2-DBB.yaml", "yolo11x-C3k2-DBB.yaml", 
     #"yolo11n-slimneck.yaml", "yolo11s-slimneck.yaml", "yolo11m-slimneck.yaml", "yolo11l-slimneck.yaml", "yolo11x-slimneck.yaml",
     
-    #"hyper-yolox.yaml", "hyper-yolol.yaml", "hyper-yolom.yaml", "hyper-yolos.yaml", "hyper-yolon.yaml", 
-    #"yolo11x-MAN.yaml", "yolo11l-MAN.yaml", "yolo11m-MAN.yaml", "yolo11s-MAN.yaml", "yolo11n-MAN.yaml", 
-    #"yolo11x-hyper.yaml", "yolo11l-hyper.yaml", "yolo11m-hyper.yaml", "yolo11s-hyper.yaml", "yolo11n-hyper.yaml", 
+    "yolo11x-MAN.yaml", "yolo11l-MAN.yaml", "yolo11m-MAN.yaml", "yolo11s-MAN.yaml", "yolo11n-MAN.yaml", 
+    "yolo11x-hyper.yaml", "yolo11l-hyper.yaml", "yolo11m-hyper.yaml", "yolo11s-hyper.yaml", "yolo11n-hyper.yaml", 
     
+    
+    #"hyper-yolox.yaml", "hyper-yolol.yaml", "hyper-yolom.yaml", "hyper-yolos.yaml", "hyper-yolon.yaml", 
     #"yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", 
     #"yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", 
     #"yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", 
