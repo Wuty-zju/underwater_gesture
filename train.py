@@ -27,7 +27,43 @@ model_configs = [
     #"yolo11-C2BRA.yaml",                # sample跑完
     #"yolo11-C2CGA.yaml",                # sample跑完
     #"yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml",                 # sample跑完
+    #"yolo11-C3k2-EMSC.yaml",                 # sample跑完
+    #"yolo11-C3k2-EMSCP.yaml",                 # sample跑完
+    #"yolo11-C3k2-CTA.yaml",                  # sample跑完
+    #"yolo11-ReCalibrationFPN-P3456.yaml",        # sample跑完
+    #"yolo11-GlobalEdgeInformationTransfer1.yaml",                  # sample跑完
+    #"yolo11-GlobalEdgeInformationTransfer2.yaml",                   # sample跑完
+    #"yolo11-GlobalEdgeInformationTransfer3.yaml",                   # sample跑完
+    #"yolo11-C3k2-MSBlock.yaml",                   # sample跑完
+    #"yolo11-ContextGuideFPN.yaml",                  # sample跑完
+    #"yolo11-C3k2-IDWC.yaml",                  # sample跑完
+    #"yolo11-C3k2-IDWB.yaml",                   # sample跑完，对应"yolo11-C3k2-IDWD.yaml"
+    #"yolo11-inceptionnext.yaml",                   # sample跑完  
+    #"yolo11-FDPN.yaml",                    # sample跑完
+    #"yolo11-ASF-P2.yaml",                    # sample跑完
+    #"yolo11-nmsfree.yaml",                    # sample跑完
+    #"yolo11-goldyolo-asf.yaml",                    # sample跑完
+    #"yolo11-FDPN-DASI.yaml",                    # sample跑完
+    #"yolo11-EIEStem.yaml",                     # sample跑完
+    #"yolo11-C3k2-ContextGuided.yaml",                     # sample跑完
+    #"yolo11-AIFI.yaml",                     # sample跑完
+    #"yolo11-C3k2-RFAConv.yaml",                     # sample跑完
+    #"yolo11-C3k2-Faster.yaml",                     # sample跑完
+    #"yolo11-C3k2-Faster-EMA.yaml",                     # sample跑完
+    #"yolo11-C3k2-ODConv.yaml",                     # sample跑完
+    #"yolo11-C3k2-DBB.yaml",                     # sample跑完
+    #"yolo11-slimneck.yaml",                     # sample跑完
     
+    "yolo11x-MAN.yaml", "yolo11l-MAN.yaml", "yolo11m-MAN.yaml", "yolo11s-MAN.yaml", "yolo11n-MAN.yaml", 
+    "yolo11x-hyper.yaml", "yolo11l-hyper.yaml", "yolo11m-hyper.yaml", "yolo11s-hyper.yaml", "yolo11n-hyper.yaml", 
+    
+    #"hyper-yolox.yaml", "hyper-yolol.yaml", "hyper-yolom.yaml", "hyper-yolos.yaml", "hyper-yolon.yaml", 
+    #"yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", 
+    #"yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", 
+    #"yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", 
+]
+
+'''
     #"yolo11-C3k2-KAN.yaml",            # annot access local variable 'kan' where it is not associated with a value(m/l/x)
     #"yolo11-C3k2-RAB.yaml",           # sample跑完 nan（关闭amp，x模型val出错）
     #"yolo11-C3k2-HDRAB.yaml", # 尝试amp-nan（nan,关闭amp，x模型val出错）
@@ -37,50 +73,7 @@ model_configs = [
     #"yolo11x-FDPN-TADDH.yaml", "yolo11l-FDPN-TADDH.yaml", "yolo11m-FDPN-TADDH.yaml", "yolo11s-FDPN-TADDH.yaml", "yolo11n-FDPN-TADDH.yaml",NameError: name 'ModulatedDeformConv2d' is not defined
     #"yolo11n-C3k2-DCNV2-Dynamic.yaml", "yolo11s-C3k2-DCNV2-Dynamic.yaml", "yolo11m-C3k2-DCNV2-Dynamic.yaml", "yolo11l-C3k2-DCNV2-Dynamic.yaml", "yolo11x-C3k2-DCNV2-Dynamic.yaml", bash: 第 1 行： 29787 段错误               （核心已转储） python train.py
 
-    #"yolo11-C3k2-EMSC.yaml",                 # sample跑完
-    #"yolo11-C3k2-EMSCP.yaml",                 # sample跑完
-    #"yolo11-C3k2-CTA.yaml",                  # sample跑完
-
-    #"yolo11-ReCalibrationFPN-P3456.yaml",        # sample跑完
-
-    #"yolo11-GlobalEdgeInformationTransfer1.yaml",                  # sample跑完
-    #"yolo11-GlobalEdgeInformationTransfer2.yaml",                   # sample跑完
-    #"yolo11-GlobalEdgeInformationTransfer3.yaml",                   # sample跑完
-    #"yolo11-C3k2-MSBlock.yaml",                   # sample跑完
-    #"yolo11-ContextGuideFPN.yaml",                  # sample跑完
-    
-    #"yolo11-C3k2-IDWC.yaml",                  # sample跑完
-    #"yolo11-C3k2-IDWB.yaml",                   # sample跑完，对应"yolo11-C3k2-IDWD.yaml"
-    #"yolo11-inceptionnext.yaml",                   # sample跑完  
-    #"yolo11x-FDPN.yaml",                    # sample跑完
-    #"yolo11n-ASF-P2.yaml",                    # sample跑完
-    
-    #"yolo11x-nmsfree.yaml", "yolo11l-nmsfree.yaml", "yolo11m-nmsfree.yaml", "yolo11s-nmsfree.yaml", "yolo11n-nmsfree.yaml",
-    #"yolo11x-goldyolo-asf.yaml", "yolo11l-goldyolo-asf.yaml", "yolo11m-goldyolo-asf.yaml", "yolo11s-goldyolo-asf.yaml", "yolo11n-goldyolo-asf.yaml",
-
-    #"yolo11x-FDPN-DASI.yaml", "yolo11l-FDPN-DASI.yaml", "yolo11m-FDPN-DASI.yaml", "yolo11s-FDPN-DASI.yaml", "yolo11n-FDPN-DASI.yaml",
-    #"yolo11x-EIEStem.yaml", "yolo11l-EIEStem.yaml", "yolo11m-EIEStem.yaml", "yolo11s-EIEStem.yaml", "yolo11n-EIEStem.yaml", 
-    
-    #"yolo11n-C3k2-ContextGuided.yaml", "yolo11s-C3k2-ContextGuided.yaml", "yolo11m-C3k2-ContextGuided.yaml", "yolo11l-C3k2-ContextGuided.yaml", "yolo11x-C3k2-ContextGuided.yaml", 
-    #"yolo11n-AIFI.yaml", "yolo11s-AIFI.yaml", "yolo11m-AIFI.yaml", "yolo11l-AIFI.yaml", "yolo11x-AIFI.yaml", 
-    #"yolo11n-C3k2-RFAConv.yaml", "yolo11s-C3k2-RFAConv.yaml", "yolo11m-C3k2-RFAConv.yaml", "yolo11l-C3k2-RFAConv.yaml", "yolo11x-C3k2-RFAConv.yaml", 
-    
-    #"yolo11x-C3k2-Faster.yaml", "yolo11l-C3k2-Faster.yaml", "yolo11m-C3k2-Faster.yaml", "yolo11s-C3k2-Faster.yaml", "yolo11n-C3k2-Faster.yaml",
-    #"yolo11x-C3k2-Faster-EMA.yaml", "yolo11l-C3k2-Faster-EMA.yaml", "yolo11m-C3k2-Faster-EMA.yaml", "yolo11s-C3k2-Faster-EMA.yaml", "yolo11n-C3k2-Faster-EMA.yaml",
-    #"yolo11n-C3k2-ODConv.yaml", "yolo11s-C3k2-ODConv.yaml", "yolo11m-C3k2-ODConv.yaml", "yolo11l-C3k2-ODConv.yaml", "yolo11x-C3k2-ODConv.yaml", 
-    #"yolo11n-C3k2-DBB.yaml", "yolo11s-C3k2-DBB.yaml", "yolo11m-C3k2-DBB.yaml", "yolo11l-C3k2-DBB.yaml", "yolo11x-C3k2-DBB.yaml", 
-    #"yolo11n-slimneck.yaml", "yolo11s-slimneck.yaml", "yolo11m-slimneck.yaml", "yolo11l-slimneck.yaml", "yolo11x-slimneck.yaml",
-    
-    "yolo11x-MAN.yaml", "yolo11l-MAN.yaml", "yolo11m-MAN.yaml", "yolo11s-MAN.yaml", "yolo11n-MAN.yaml", 
-    "yolo11x-hyper.yaml", "yolo11l-hyper.yaml", "yolo11m-hyper.yaml", "yolo11s-hyper.yaml", "yolo11n-hyper.yaml", 
-    
-    
-    #"hyper-yolox.yaml", "hyper-yolol.yaml", "hyper-yolom.yaml", "hyper-yolos.yaml", "hyper-yolon.yaml", 
-    #"yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", "yolo11-C3k2-PConv.yaml", 
-    #"yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", "yolo11-atthead.yaml", 
-    #"yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", "yolo11-C3k2-EMA.yaml", 
-]
-
+'''
 datasets = {
     "sample": "datasets/CADDY_gestures_sample/yolo/data.yaml",
     #"complete": "datasets/CADDY_gestures_complete/yolo/data.yaml"
