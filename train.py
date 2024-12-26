@@ -40,7 +40,7 @@ model_configs = [
     #"yolo11-C3k2-IDWB.yaml",                   # sample跑完，对应"yolo11-C3k2-IDWD.yaml"
     #"yolo11-inceptionnext.yaml",                   # sample跑完  
     #"yolo11-FDPN.yaml",                    # sample跑完
-    #"yolo11-ASF-P2.yaml",                    # sample跑完
+    #"yolo11-ASF-P2.yaml",       n             # sample跑完
     #"yolo11-nmsfree.yaml",                    # sample跑完
     #"yolo11-goldyolo-asf.yaml",                    # sample跑完
     #"yolo11-FDPN-DASI.yaml",                    # sample跑完
@@ -65,7 +65,7 @@ model_configs = [
 
 '''
     #"yolo11-C3k2-KAN.yaml",            # annot access local variable 'kan' where it is not associated with a value(m/l/x)
-    #"yolo11-C3k2-RAB.yaml",           # sample跑完 nan（关闭amp，x模型val出错）
+    #"yolo11-C3k2-RAB.yaml",           # sample跑完 nan(关闭amp, x模型val出错)
     #"yolo11-C3k2-HDRAB.yaml", # 尝试amp-nan（nan,关闭amp，x模型val出错）
     #"yolo11-C2DPB.yaml",  #RuntimeError: The size of tensor a (336) must match the size of tensor b (400) at non-singleton dimension 3
     #"yolo11-C3k2-SFA.yaml", # nan
