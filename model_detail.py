@@ -1,7 +1,7 @@
 import warnings
 warnings.filterwarnings('ignore')
 import os, tqdm
-from ultralytics import YOLO
+from ultralytics import YOLO # type: ignore
 
 if __name__ == '__main__':
     yaml_path = "yolo11n-C3k2-WTConv.yaml"
