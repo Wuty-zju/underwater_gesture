@@ -57,10 +57,10 @@ model_configs = [
     #"yolo11x-MAN.yaml", "yolo11l-MAN.yaml", "yolo11m-MAN.yaml", "yolo11s-MAN.yaml", "yolo11n-MAN.yaml", 
     #"yolo11x-hyper.yaml", "yolo11l-hyper.yaml", "yolo11m-hyper.yaml", "yolo11s-hyper.yaml", "yolo11n-hyper.yaml", 
     
-    "hyper-yolox.yaml", "hyper-yolol.yaml", "hyper-yolom.yaml", "hyper-yolos.yaml", "hyper-yolon.yaml", 
-    "yolo11x-C3k2-PConv.yaml", "yolo11l-C3k2-PConv.yaml", "yolo11m-C3k2-PConv.yaml", "yolo11s-C3k2-PConv.yaml", "yolo11n-C3k2-PConv.yaml", 
-    #"yolo11x-atthead.yaml", "yolo11l-atthead.yaml", "yolo11m-atthead.yaml", "yolo11s-atthead.yaml", "yolo11n-atthead.yaml", 
-    #"yolo11x-C3k2-EMA.yaml", "yolo11l-C3k2-EMA.yaml", "yolo11m-C3k2-EMA.yaml", "yolo11s-C3k2-EMA.yaml", "yolo11n-C3k2-EMA.yaml", 
+    #"hyper-yolox.yaml", "hyper-yolol.yaml", "hyper-yolom.yaml", "hyper-yolos.yaml", "hyper-yolon.yaml", 
+    #"yolo11x-C3k2-PConv.yaml", "yolo11l-C3k2-PConv.yaml", "yolo11m-C3k2-PConv.yaml", "yolo11s-C3k2-PConv.yaml", "yolo11n-C3k2-PConv.yaml", 
+    #"yolo11n-atthead.yaml", "yolo11s-atthead.yaml", "yolo11m-atthead.yaml", "yolo11l-atthead.yaml", "yolo11x-atthead.yaml", 
+    #"yolo11n-C3k2-EMA.yaml", "yolo11s-C3k2-EMA.yaml", "yolo11m-C3k2-EMA.yaml", "yolo11l-C3k2-EMA.yaml", "yolo11x-C3k2-EMA.yaml", 
 ]
 
 '''
