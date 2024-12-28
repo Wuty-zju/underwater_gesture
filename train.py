@@ -16,7 +16,7 @@ model_configs = [
     #"yolo11-C3k2-SCConv.yaml",         # sample跑完
     #"yolo11-ReCalibrationFPN-P345.yaml",         # sample跑完
     #"yolo11-WaveletPool.yaml",         # sample跑完
-    #"yolo11-efficientViT.yaml",            # sample跑完（缺n/s）
+    #"yolo11-efficientViT.yaml",            # sample跑完
     #"yolo11-C3k2-WTConv.yaml",         # sample跑完
     #"yolo11-LADH.yaml",                # sample跑完
     #"yolo11-RSCD.yaml",                # sample跑完
@@ -37,7 +37,7 @@ model_configs = [
     #"yolo11-C3k2-MSBlock.yaml",                   # sample跑完
     #"yolo11-ContextGuideFPN.yaml",                  # sample跑完
     #"yolo11-C3k2-IDWC.yaml",                  # sample跑完
-    #"yolo11-C3k2-IDWB.yaml",                   # sample跑完，对应"yolo11-C3k2-IDWD.yaml"
+    #"yolo11-C3k2-IDWB.yaml",                   # sample跑完，对应"226.yolo11-C3k2-IDWD.yaml"
     #"yolo11-inceptionnext.yaml",                   # sample跑完  
     #"yolo11-FDPN.yaml",                    # sample跑完
     #"yolo11-ASF-P2.yaml",       n             # sample跑完
@@ -53,14 +53,16 @@ model_configs = [
     #"yolo11-C3k2-ODConv.yaml",                     # sample跑完
     #"yolo11-C3k2-DBB.yaml",                     # sample跑完
     #"yolo11-slimneck.yaml",                     # sample跑完
+    #"yolo11-MAN.yaml",                      # sample跑完
+    #"yolo11-hyper.yaml",                      # sample跑完
+    #"hyper-yolo.yaml",                      # sample跑完
+    #"yolo11-C3k2-PConv.yaml",                      # sample跑完
+    #"yolo11-atthead.yaml",                      # sample跑完
+    #"yolo11-C3k2-EMA.yaml",                      # sample跑完
+
+    #"yolo11n-HSFPN.yaml", "yolo11s-HSFPN.yaml", "yolo11m-HSFPN.yaml", "yolo11l-HSFPN.yaml", "yolo11x-HSFPN.yaml", 
+    #"yolo11x-HSPAN.yaml", "yolo11l-HSPAN.yaml", "yolo11m-HSPAN.yaml", "yolo11s-HSPAN.yaml", "yolo11n-HSPAN.yaml", 
     
-    #"yolo11x-MAN.yaml", "yolo11l-MAN.yaml", "yolo11m-MAN.yaml", "yolo11s-MAN.yaml", "yolo11n-MAN.yaml", 
-    #"yolo11x-hyper.yaml", "yolo11l-hyper.yaml", "yolo11m-hyper.yaml", "yolo11s-hyper.yaml", "yolo11n-hyper.yaml", 
-    
-    #"hyper-yolox.yaml", "hyper-yolol.yaml", "hyper-yolom.yaml", "hyper-yolos.yaml", "hyper-yolon.yaml", 
-    #"yolo11x-C3k2-PConv.yaml", "yolo11l-C3k2-PConv.yaml", "yolo11m-C3k2-PConv.yaml", "yolo11s-C3k2-PConv.yaml", "yolo11n-C3k2-PConv.yaml", 
-    #"yolo11n-atthead.yaml", "yolo11s-atthead.yaml", "yolo11m-atthead.yaml", "yolo11l-atthead.yaml", "yolo11x-atthead.yaml", 
-    #"yolo11n-C3k2-EMA.yaml", "yolo11s-C3k2-EMA.yaml", "yolo11m-C3k2-EMA.yaml", "yolo11l-C3k2-EMA.yaml", "yolo11x-C3k2-EMA.yaml", 
 ]
 
 '''
@@ -69,9 +71,10 @@ model_configs = [
     #"yolo11-C3k2-HDRAB.yaml", # 尝试amp-nan（nan,关闭amp，x模型val出错）
     #"yolo11-C2DPB.yaml",  #RuntimeError: The size of tensor a (336) must match the size of tensor b (400) at non-singleton dimension 3
     #"yolo11-C3k2-SFA.yaml", # nan
-    #"yolo11x-C3k2-DLKA.yaml", #bash: 第 1 行： 228880 段错误               （核心已转储） python train.py
-    #"yolo11x-FDPN-TADDH.yaml", "yolo11l-FDPN-TADDH.yaml", "yolo11m-FDPN-TADDH.yaml", "yolo11s-FDPN-TADDH.yaml", "yolo11n-FDPN-TADDH.yaml",NameError: name 'ModulatedDeformConv2d' is not defined
-    #"yolo11n-C3k2-DCNV2-Dynamic.yaml", "yolo11s-C3k2-DCNV2-Dynamic.yaml", "yolo11m-C3k2-DCNV2-Dynamic.yaml", "yolo11l-C3k2-DCNV2-Dynamic.yaml", "yolo11x-C3k2-DCNV2-Dynamic.yaml", bash: 第 1 行： 29787 段错误               （核心已转储） python train.py
+    #"yolo11-C3k2-DLKA.yaml", #bash: 第 1 行： 228880 段错误               （核心已转储） python train.py
+    #"yolo11-FDPN-TADDH.yaml",       NameError: name 'ModulatedDeformConv2d' is not defined
+    #"yolo11-C3k2-DCNV2-Dynamic.yaml",  bash: 第 1 行： 29787 段错误               （核心已转储） python train.py
+    #"yolo11-C3k2-DCNV4.yaml",  #关闭amp(x模型 nan)
 
 '''
 datasets = {
