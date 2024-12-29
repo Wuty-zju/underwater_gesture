@@ -1088,7 +1088,8 @@ def parse_model(d, ch, verbose=True, warehouse_manager=None):  # model_dict, inp
             C3x, RepC3, PSA, SCDown, C2fCIB, GSConv, GSConvns, VoVGSCSP, VoVGSCSPns, VoVGSCSPC, RCSOSA, KWConv, CSPStage, SPDConv, RepBlock,
             SPPF_LSKA, CSP_EDLAN, nn.Conv2d, HWD, RepNCSPELAN4, DBBNCSPELAN4, OREPANCSPELAN4, DRBNCSPELAN4, RepNCSPELAN4_CAA, V7DownSampling,
             DGCST, RepNCSPELAN4_CAA, SRFD, DRFD, RGCSPELAN, CSP_PTB, SimpleStem, VisionClueMerge, VSSBlock_YOLO, XSSBlock, GLSA, FeaturePyramidSharedConv,
-            LDConv, CSP_MSCB, CSP_PMSFA, RFAConv, RFCBAMConv, RFCAConv, CSP_FreqSpatial, C2BRA, C2CGA, C2DA, C2DPB, MANet
+            LDConv, CSP_MSCB, CSP_PMSFA, RFAConv, RFCBAMConv, RFCAConv, CSP_FreqSpatial, C2BRA, C2CGA, C2DA, C2DPB, MANet, MANet_FasterBlock, MANet_FasterCGLU, 
+            MANet_Star
         ) + C3K2_CLASS):
             if args[0] == 'head_channel':
                 args[0] = d[args[0]]
@@ -1112,7 +1113,8 @@ def parse_model(d, ch, verbose=True, warehouse_manager=None):  # model_dict, inp
                 args[3] = make_divisible(min(args[3], max_channels) * width, 8)
             if m in ((
                 BottleneckCSP, C1, C2, C2f, C3k2, C2fAttn, C3, C3TR, C3Ghost, C3x, RepC3, C2fPSA, C2fCIB, C2PSA, VoVGSCSP, VoVGSCSPns, VoVGSCSPC, RCSOSA,
-                CSPStage, SPDConv, RepBlock, CSP_EDLAN, RGCSPELAN, CSP_PTB, XSSBlock, CSP_MSCB, CSP_PMSFA, CSP_FreqSpatial, C2BRA, C2CGA, C2DA, C2DPB, MANet
+                CSPStage, SPDConv, RepBlock, CSP_EDLAN, RGCSPELAN, CSP_PTB, XSSBlock, CSP_MSCB, CSP_PMSFA, CSP_FreqSpatial, C2BRA, C2CGA, C2DA, C2DPB, MANet,
+                MANet_FasterBlock, MANet_FasterCGLU, MANet_Star
             ) + C3K2_CLASS):
                 args.insert(2, n)  # number of repeats
                 n = 1
@@ -1321,6 +1323,10 @@ def parse_model(d, ch, verbose=True, warehouse_manager=None):  # model_dict, inp
             c1 = ch[f]
             c2 = [make_divisible(min(i, max_channels) * width, 8) for i in args[0]]
             args = [c1, c2]
+        elif m in {MultiScaleGatedAttn}:
+            c1 = [ch[x] for x in f]
+            c2 = min(c1)
+            args = [c1]
         elif m is HyperComputeModule:
             c1, c2 = ch[f], args[0]
             c2 = make_divisible(min(c2, max_channels) * width, 8)
