@@ -59,10 +59,14 @@ model_configs = [
     #"yolo11-C3k2-PConv.yaml",                      # sample跑完
     #"yolo11-atthead.yaml",                      # sample跑完
     #"yolo11-C3k2-EMA.yaml",                      # sample跑完
-
-    #"yolo11n-HSFPN.yaml", "yolo11s-HSFPN.yaml", "yolo11m-HSFPN.yaml", "yolo11l-HSFPN.yaml", "yolo11x-HSFPN.yaml", 
-    #"yolo11x-HSPAN.yaml", "yolo11l-HSPAN.yaml", "yolo11m-HSPAN.yaml", "yolo11s-HSPAN.yaml", "yolo11n-HSPAN.yaml", 
+    #"yolo11-HSFPN.yaml",                       # sample跑完
+    #"yolo11-HSPAN.yaml",                       # sample跑完
     
+    #"yolo11x-MAN-Faster.yaml", "yolo11l-MAN-Faster.yaml", "yolo11m-MAN-Faster.yaml", "yolo11s-MAN-Faster.yaml", "yolo11n-MAN-Faster.yaml", 
+    #"yolo11x-MAN-FasterCGLU.yaml", "yolo11l-MAN-FasterCGLU.yaml", "yolo11m-MAN-FasterCGLU.yaml", "yolo11s-MAN-FasterCGLU.yaml", "yolo11n-MAN-FasterCGLU.yaml", 
+    #"yolo11x-MAN-Star.yaml", "yolo11l-MAN-Star.yaml", "yolo11m-MAN-Star.yaml", "yolo11s-MAN-Star.yaml", "yolo11n-MAN-Star.yaml", 
+    #"yolo11n-msga.yaml", "yolo11s-msga.yaml", "yolo11m-msga.yaml", "yolo11l-msga.yaml", "yolo11x-msga.yaml", 
+    #"yolo11n-MutilBackbone-MSGA.yaml", "yolo11s-MutilBackbone-MSGA.yaml", "yolo11m-MutilBackbone-MSGA.yaml", "yolo11l-MutilBackbone-MSGA.yaml", "yolo11x-MutilBackbone-MSGA.yaml",
 ]
 
 '''
@@ -75,8 +79,8 @@ model_configs = [
     #"yolo11-FDPN-TADDH.yaml",       NameError: name 'ModulatedDeformConv2d' is not defined
     #"yolo11-C3k2-DCNV2-Dynamic.yaml",  bash: 第 1 行： 29787 段错误               （核心已转储） python train.py
     #"yolo11-C3k2-DCNV4.yaml",  #关闭amp(x模型 nan)
-
 '''
+
 datasets = {
     "sample": "datasets/CADDY_gestures_sample/yolo/data.yaml",
     #"complete": "datasets/CADDY_gestures_complete/yolo/data.yaml"
