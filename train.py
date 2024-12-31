@@ -4,6 +4,8 @@ import json
 import os
 
 model_configs = [
+    
+    ## Official
     #"yolov3n.yaml", "yolov3s.yaml", "yolov3m.yaml", "yolov3l.yaml", "yolov3x.yaml",  
     #"yolov5n.yaml", "yolov5s.yaml", "yolov5m.yaml", "yolov5l.yaml", "yolov5x.yaml",  
     #"yolov6n.yaml", "yolov6s.yaml", "yolov6m.yaml", "yolov6l.yaml", "yolov6x.yaml",  
@@ -12,11 +14,73 @@ model_configs = [
     #"yolov10n.yaml", "yolov10s.yaml", "yolov10m.yaml", "yolov10l.yaml", "yolov10x.yaml",
     #"yolo11n.yaml", "yolo11s.yaml", "yolo11m.yaml", "yolo11l.yaml", "yolo11x.yaml",
     
+    ## BackBone
+    #"yolo11-efficientViT.yaml",           # 1 # BackBone # sample跑完
+    #"yolo11-fasternet.yaml",             # 2 # BackBone 
+    #"yolo11-timm.yaml",                 # 3 # BackBone 
+    #"yolo11-convnextv2.yaml",          # 4 # BackBone
+    #"yolo11-EfficientFormerV2.yaml",      # 9 # BackBone  # Error-5
+    #"yolo11-vanillanet.yaml",          # 16 # BackBone
+    #"yolo11-RevCol.yaml",             # 18 # BackBone
+    #"yolo11-LSKNet.yaml",            # 19 # BackBone
+    
+    
+    
+
+    ## SPPF
+    
+    ## Neck
+    #"yolo11-bifpn.yaml",              # 6 # Neck 
+    #"yolo11-slimneck.yaml",                    # 13 # Neck # sample跑完
+    #"yolo11-AFPN-P345.yaml",                   # 15-a # Neck
+    #"yolo11-AFPN-P345-Custom",                   # 15-b # Neck
+    #"yolo11-AFPN-P2345.yaml",                   # 15-c # Neck
+    #"yolo11-AFPN-P2345-Custom",                   # 15-d # Neck
+    #"yolo11-RCSOSA.yaml",                   # 26 # Neck
+    
+
+    
+    ## Head
+    #"yolo11-dyhead.yaml",                      # 5 # Head 
+    
+    ## PostProcess
+    
+    ## UpSample & DownSample
+    #"yolo11-LAWDS.yaml",                       # 23 # DownSample
+    
+    ## C3k2
+    #"yolo11-C3k2-Faster.yaml",                 # 7 # C3k2 # sample跑完
+    #"yolo11-C3k2-ODConv.yaml",                 # 8 # C3k2 # sample跑完
+    #"yolo11-C3k2-Faster-EMA.yaml",             # 10 # C3k2 # sample跑完
+    #"yolo11-C3k2-DBB.yaml",                    # 11 # C3k2 # sample跑完
+    #"yolo11-C3k2-CloAtt.yaml",                 # 17 # C3k2 # Error-5
+    #"yolo11-C3k2-SCConv.yaml",                 # 20 # C3k2 # sample跑完
+    #"yolo11-C3k2-SCcConv.yaml",                # 21 # C3k2
+    #"yolo11-C3k2-EMSC.yaml",                   # 24 # C3k2 # sample跑完
+    #"yolo11-C3k2-EMSCP.yaml",                  # 25 # C3k2 # sample跑完
+    #"yolo11-KernelWarehouse.yaml",             # 27 # C3k2 
+
+
+
+
+    
+    ## C2PSA
+    
+    ## Mixup
+    
+    ## Attantion
+    #"yolo11-attention.yaml",          # 14 # Attention # Warning-需要修改yaml
+    
+    ## Label Assign
+    #"Adaptive Training Sample Selection",  # 12 # Label Assign
+    
+    ## Loss
+    #"MPDiou",                            # 22 # Loss      
+    
+    
     #"yolo11-C3k2-AdditiveBlock.yaml",          # sample跑完
-    #"yolo11-C3k2-SCConv.yaml",         # sample跑完
     #"yolo11-ReCalibrationFPN-P345.yaml",         # sample跑完
     #"yolo11-WaveletPool.yaml",         # sample跑完
-    #"yolo11-efficientViT.yaml",            # sample跑完
     #"yolo11-C3k2-WTConv.yaml",         # sample跑完
     #"yolo11-LADH.yaml",                # sample跑完
     #"yolo11-RSCD.yaml",                # sample跑完
@@ -27,8 +91,6 @@ model_configs = [
     #"yolo11-C2BRA.yaml",                # sample跑完
     #"yolo11-C2CGA.yaml",                # sample跑完
     #"yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml",                 # sample跑完
-    #"yolo11-C3k2-EMSC.yaml",                 # sample跑完
-    #"yolo11-C3k2-EMSCP.yaml",                 # sample跑完
     #"yolo11-C3k2-CTA.yaml",                  # sample跑完
     #"yolo11-ReCalibrationFPN-P3456.yaml",        # sample跑完
     #"yolo11-GlobalEdgeInformationTransfer1.yaml",                  # sample跑完
@@ -40,7 +102,7 @@ model_configs = [
     #"yolo11-C3k2-IDWB.yaml",                   # sample跑完，对应"226.yolo11-C3k2-IDWD.yaml"
     #"yolo11-inceptionnext.yaml",                   # sample跑完  
     #"yolo11-FDPN.yaml",                    # sample跑完
-    #"yolo11-ASF-P2.yaml",       n             # sample跑完
+    #"yolo11-ASF-P2.yaml",                    # sample跑完
     #"yolo11-nmsfree.yaml",                    # sample跑完
     #"yolo11-goldyolo-asf.yaml",                    # sample跑完
     #"yolo11-FDPN-DASI.yaml",                    # sample跑完
@@ -48,11 +110,6 @@ model_configs = [
     #"yolo11-C3k2-ContextGuided.yaml",                     # sample跑完
     #"yolo11-AIFI.yaml",                     # sample跑完
     #"yolo11-C3k2-RFAConv.yaml",                     # sample跑完
-    #"yolo11-C3k2-Faster.yaml",                     # sample跑完
-    #"yolo11-C3k2-Faster-EMA.yaml",                     # sample跑完
-    #"yolo11-C3k2-ODConv.yaml",                     # sample跑完
-    #"yolo11-C3k2-DBB.yaml",                     # sample跑完
-    #"yolo11-slimneck.yaml",                     # sample跑完
     #"yolo11-MAN.yaml",                      # sample跑完
     #"yolo11-hyper.yaml",                      # sample跑完
     #"hyper-yolo.yaml",                      # sample跑完
