@@ -15,38 +15,49 @@ model_configs = [
     #"yolo11n.yaml", "yolo11s.yaml", "yolo11m.yaml", "yolo11l.yaml", "yolo11x.yaml",
     
     ## BackBone
-    #"yolo11-efficientViT.yaml",           # 1 # BackBone # sample跑完
-    #"yolo11-fasternet.yaml",             # 2 # BackBone 
-    #"yolo11-timm.yaml",                 # 3 # BackBone 
-    #"yolo11-convnextv2.yaml",          # 4 # BackBone
-    #"yolo11-EfficientFormerV2.yaml",      # 9 # BackBone  # Error-5
-    #"yolo11-vanillanet.yaml",          # 16 # BackBone
-    #"yolo11-RevCol.yaml",             # 18 # BackBone
-    #"yolo11-LSKNet.yaml",            # 19 # BackBone
+    #"yolo11-efficientViT.yaml",                # 1 # BackBone # sample跑完
+    #"yolo11-fasternet.yaml",                   # 2 # BackBone # sample跑完 # Warning-需要修改路径 cd ultralytics-8.3.9 && "sample": "../datasets/CADDY_gestures_sample/yolo/data.yaml", && nohup bash -c 'python ../train.py & PID=$!; echo "PID: $PID"; wait $PID' &> "../log/train_$(date +%Y%m%d_%H%M%S).log" &
+    #"yolo11-timm.yaml",                        # 3 # BackBone # sample跑完
+    #"yolo11-convnextv2.yaml",                  # 4 # BackBone # sample跑完
+    #"yolo11-EfficientFormerV2.yaml",           # 9 # BackBone  # Error-5
+    #"yolo11-vanillanet.yaml",                  # 16 # BackBone # sample跑完
+    #"yolo11l-RevCol.yaml", "yolo11m-RevCol.yaml", "yolo11s-RevCol.yaml", "yolo11n-RevCol.yaml",                     # 18 # BackBone
+    #"yolo11x-LSKNet.yaml", "yolo11l-LSKNet.yaml", "yolo11m-LSKNet.yaml", "yolo11s-LSKNet.yaml", "yolo11n-LSKNet.yaml",                       # 19 # BackBone
+    #"yolo11-swintransformer.yaml",             # 39 # BackBone
+    #"yolo11-repvit.yaml",                      # 40 # BackBone
     
     
     
 
     ## SPPF
+    #"yolo11n-FocalModulation.yaml", "yolo11s-FocalModulation.yaml", "yolo11m-FocalModulation.yaml", "yolo11l-FocalModulation.yaml", "yolo11x-FocalModulation.yaml",              # 36 # SPPF
     
     ## Neck
-    #"yolo11-bifpn.yaml",              # 6 # Neck 
+    #"yolo11-bifpn.yaml",                       # 6 # Neck 
     #"yolo11-slimneck.yaml",                    # 13 # Neck # sample跑完
     #"yolo11-AFPN-P345.yaml",                   # 15-a # Neck
-    #"yolo11-AFPN-P345-Custom",                   # 15-b # Neck
-    #"yolo11-AFPN-P2345.yaml",                   # 15-c # Neck
-    #"yolo11-AFPN-P2345-Custom",                   # 15-d # Neck
-    #"yolo11-RCSOSA.yaml",                   # 26 # Neck
+    #"yolo11-AFPN-P345-Custom",                 # 15-b # Neck
+    #"yolo11-AFPN-P2345.yaml",                  # 15-c # Neck
+    #"yolo11-AFPN-P2345-Custom",                # 15-d # Neck
+    #"yolo11-RCSOSA.yaml",                      # 26 # Neck
+    #"yolo11-goldyolo.yaml",                    # 43 # Neck
+    #"yolo11-GFPN.yaml",                        # 48 # Neck
+    #"yolo11-EfficientRepBiPAN.yaml",           # 50 # Neck
     
 
     
     ## Head
     #"yolo11-dyhead.yaml",                      # 5 # Head 
+    #"yolo11-EfficientHead.yaml",               # 9 # Head
+    #"yolo11-aux.yaml",                         # 32 # Head
+    #"yolo11-dyhead-DCNV3.yaml",                # 35 # Head
     
     ## PostProcess
     
     ## UpSample & DownSample
     #"yolo11-LAWDS.yaml",                       # 23 # DownSample
+    #"yolo11-ContextGuidedDown.yaml",           # 45 # DownSample
+    #"yolo11-SPDConv.yaml",                     # 49 # DownSample
     
     ## C3k2
     #"yolo11-C3k2-Faster.yaml",                 # 7 # C3k2 # sample跑完
@@ -59,23 +70,32 @@ model_configs = [
     #"yolo11-C3k2-EMSC.yaml",                   # 24 # C3k2 # sample跑完
     #"yolo11-C3k2-EMSCP.yaml",                  # 25 # C3k2 # sample跑完
     #"yolo11-KernelWarehouse.yaml",             # 27 # C3k2 
-
-
-
-
+    #"yolo11-C3k2-DySnakeConv.yaml",            # 30 # C3k2
+    #"yolo11-C3k2-DCNV2.yaml",                  # 33 # C3k2 
+    #"yolo11-C3k2-DCNV3.yaml",                  # 34 # C3K2 
+    #"yolo11-C3k2-OREPA.yaml",                  # 37 # C3K2
+    #"yolo11-C3k2-REPVGGOREPA.yaml",            # 38 # C3K2
+    #"yolo11-C3k2-DCNV2-Dynamic.yaml",          # 42 # C3K2 # bash: 第 1 行： 29787 段错误               （核心已转储） python train.py
+    #"yolo11-C3k2-ContextGuided.yaml",          # 44 # C3K2 # sample跑完
+    #"yolo11-C3k2-MSBlock.yaml",                # 46 # C3K2 # sample跑完
+    #"yolo11-C3k2-DLKA.yaml",                   # 47 # C3K2 # bash: 第 1 行： 228880 段错误               （核心已转储） python train.py
     
     ## C2PSA
     
     ## Mixup
+    #"yolo11-fasternet-bifpn.yaml",             # 41 # Mixup # BackBone # Neck # Warning-可能修改路径
     
     ## Attantion
-    #"yolo11-attention.yaml",          # 14 # Attention # Warning-需要修改yaml
+    #"yolo11-attention.yaml",                   # 14 # Attention # Warning-需要修改yaml
     
     ## Label Assign
-    #"Adaptive Training Sample Selection",  # 12 # Label Assign
+    #"Adaptive Training Sample Selection",      # 12 # Label Assign
     
     ## Loss
-    #"MPDiou",                            # 22 # Loss      
+    #"MPDiou",                                  # 22 # Loss      
+    #“Normalized Gaussian Wasserstein Distance”,# 28 # Loss # Label Assign
+    #"SlideLoss and EMASlideLoss",              # 29 # Loss 
+    
     
     
     #"yolo11-C3k2-AdditiveBlock.yaml",          # sample跑完
@@ -96,7 +116,6 @@ model_configs = [
     #"yolo11-GlobalEdgeInformationTransfer1.yaml",                  # sample跑完
     #"yolo11-GlobalEdgeInformationTransfer2.yaml",                   # sample跑完
     #"yolo11-GlobalEdgeInformationTransfer3.yaml",                   # sample跑完
-    #"yolo11-C3k2-MSBlock.yaml",                   # sample跑完
     #"yolo11-ContextGuideFPN.yaml",                  # sample跑完
     #"yolo11-C3k2-IDWC.yaml",                  # sample跑完
     #"yolo11-C3k2-IDWB.yaml",                   # sample跑完，对应"226.yolo11-C3k2-IDWD.yaml"
@@ -107,7 +126,6 @@ model_configs = [
     #"yolo11-goldyolo-asf.yaml",                    # sample跑完
     #"yolo11-FDPN-DASI.yaml",                    # sample跑完
     #"yolo11-EIEStem.yaml",                     # sample跑完
-    #"yolo11-C3k2-ContextGuided.yaml",                     # sample跑完
     #"yolo11-AIFI.yaml",                     # sample跑完
     #"yolo11-C3k2-RFAConv.yaml",                     # sample跑完
     #"yolo11-MAN.yaml",                      # sample跑完
@@ -118,12 +136,11 @@ model_configs = [
     #"yolo11-C3k2-EMA.yaml",                      # sample跑完
     #"yolo11-HSFPN.yaml",                       # sample跑完
     #"yolo11-HSPAN.yaml",                       # sample跑完
-    
-    #"yolo11x-MAN-Faster.yaml", "yolo11l-MAN-Faster.yaml", "yolo11m-MAN-Faster.yaml", "yolo11s-MAN-Faster.yaml", "yolo11n-MAN-Faster.yaml", 
-    #"yolo11x-MAN-FasterCGLU.yaml", "yolo11l-MAN-FasterCGLU.yaml", "yolo11m-MAN-FasterCGLU.yaml", "yolo11s-MAN-FasterCGLU.yaml", "yolo11n-MAN-FasterCGLU.yaml", 
-    #"yolo11x-MAN-Star.yaml", "yolo11l-MAN-Star.yaml", "yolo11m-MAN-Star.yaml", "yolo11s-MAN-Star.yaml", "yolo11n-MAN-Star.yaml", 
-    #"yolo11n-msga.yaml", "yolo11s-msga.yaml", "yolo11m-msga.yaml", "yolo11l-msga.yaml", "yolo11x-msga.yaml", 
-    #"yolo11n-MutilBackbone-MSGA.yaml", "yolo11s-MutilBackbone-MSGA.yaml", "yolo11m-MutilBackbone-MSGA.yaml", "yolo11l-MutilBackbone-MSGA.yaml", "yolo11x-MutilBackbone-MSGA.yaml",
+    #"yolo11x-MAN-Faster.yaml",                 # sample跑完
+    #"yolo11x-MAN-FasterCGLU.yaml",           # sample跑完
+    #"yolo11x-MAN-Star.yaml",                  # sample跑完
+    #"yolo11n-msga.yaml",                     # sample跑完
+    #"yolo11n-MutilBackbone-MSGA.yaml",            # sample跑完
 ]
 
 '''
@@ -132,9 +149,7 @@ model_configs = [
     #"yolo11-C3k2-HDRAB.yaml", # 尝试amp-nan（nan,关闭amp，x模型val出错）
     #"yolo11-C2DPB.yaml",  #RuntimeError: The size of tensor a (336) must match the size of tensor b (400) at non-singleton dimension 3
     #"yolo11-C3k2-SFA.yaml", # nan
-    #"yolo11-C3k2-DLKA.yaml", #bash: 第 1 行： 228880 段错误               （核心已转储） python train.py
     #"yolo11-FDPN-TADDH.yaml",       NameError: name 'ModulatedDeformConv2d' is not defined
-    #"yolo11-C3k2-DCNV2-Dynamic.yaml",  bash: 第 1 行： 29787 段错误               （核心已转储） python train.py
     #"yolo11-C3k2-DCNV4.yaml",  #关闭amp(x模型 nan)
 '''
 

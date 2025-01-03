@@ -4,7 +4,7 @@ import os, tqdm
 from ultralytics import YOLO # type: ignore
 
 if __name__ == '__main__':
-    yaml_path = "yolo11-C3k2-DCNV4.yaml"
+    yaml_path = "yolo11-C3k2-DCNV2-Dynamic.yaml"
     
     error_result = []
     if 'rtdetr' not in yaml_path and 'cls' not in yaml_path and 'world' not in yaml_path:
