@@ -23,14 +23,19 @@ model_configs = [
     #"yolo11-vanillanet.yaml",                  # 16 # BackBone # sample跑完
     #"yolo11l-RevCol.yaml", "yolo11m-RevCol.yaml", "yolo11s-RevCol.yaml", "yolo11n-RevCol.yaml",                     # 18 # BackBone
     #"yolo11x-LSKNet.yaml", "yolo11l-LSKNet.yaml", "yolo11m-LSKNet.yaml", "yolo11s-LSKNet.yaml", "yolo11n-LSKNet.yaml",                       # 19 # BackBone
-    #"yolo11-swintransformer.yaml",             # 39 # BackBone
-    #"yolo11-repvit.yaml",                      # 40 # BackBone
+    #"yolo11n-swintransformer.yaml", "yolo11s-swintransformer.yaml", "yolo11m-swintransformer.yaml", "yolo11l-swintransformer.yaml", "yolo11x-swintransformer.yaml",             # 39 # BackBone
+    #"yolo11x-repvit.yaml", "yolo11l-repvit.yaml", "yolo11m-repvit.yaml", "yolo11s-repvit.yaml", "yolo11n-repvit.yaml",                      # 40 # BackBone
+    #"yolo11n-HGNetV2.yaml", "yolo11s-HGNetV2.yaml", "yolo11m-HGNetV2.yaml", "yolo11l-HGNetV2.yaml", "yolo11x-HGNetV2.yaml",                     # 61 # BackBone
+    #"yolo11n-GhostHGNetV2.yaml", "yolo11s-GhostHGNetV2.yaml", "yolo11m-GhostHGNetV2.yaml", "yolo11l-GhostHGNetV2.yaml", "yolo11x-GhostHGNetV2.yaml",                # 62 # BackBone
+    #"yolo11n-RepHGNetV2.yaml", "yolo11s-RepHGNetV2.yaml", "yolo11m-RepHGNetV2.yaml", "yolo11l-RepHGNetV2.yaml", "yolo11x-RepHGNetV2.yaml",                  # 63 # BackBone
     
     
     
 
     ## SPPF
     #"yolo11n-FocalModulation.yaml", "yolo11s-FocalModulation.yaml", "yolo11m-FocalModulation.yaml", "yolo11l-FocalModulation.yaml", "yolo11x-FocalModulation.yaml",              # 36 # SPPF
+    #"yolo11-SPPF-LSKA.yaml",                  # 52 # SPPF
+    #"yolo11-AIFI.yaml",                       # 55 # SPPF
     
     ## Neck
     #"yolo11-bifpn.yaml",                       # 6 # Neck 
@@ -47,17 +52,17 @@ model_configs = [
 
     
     ## Head
-    #"yolo11-dyhead.yaml",                      # 5 # Head 
-    #"yolo11-EfficientHead.yaml",               # 9 # Head
-    #"yolo11-aux.yaml",                         # 32 # Head
-    #"yolo11-dyhead-DCNV3.yaml",                # 35 # Head
+    #"yolo11-dyhead.yaml",                      # 5 # Head # Error-NameError: name 'normal_init' is not defined
+    #"yolo11x-EfficientHead.yaml", "yolo11l-EfficientHead.yaml", "yolo11m-EfficientHead.yaml", "yolo11s-EfficientHead.yaml", "yolo11n-EfficientHead.yaml",              # 9 # Head
+    #"yolo11x-aux.yaml", "yolo11l-aux.yaml", "yolo11m-aux.yaml", "yolo11s-aux.yaml", "yolo11n-aux.yaml",                         # 32 # Head
+    #"yolo11-dyhead-DCNV3.yaml",                # 35 # Head # Error-NameError: name 'normal_init' is not defined
     
     ## PostProcess
     
     ## UpSample & DownSample
-    #"yolo11-LAWDS.yaml",                       # 23 # DownSample
-    #"yolo11-ContextGuidedDown.yaml",           # 45 # DownSample
-    #"yolo11-SPDConv.yaml",                     # 49 # DownSample
+    #"yolo11x-LAWDS.yaml", "yolo11l-LAWDS.yaml", "yolo11m-LAWDS.yaml", "yolo11s-LAWDS.yaml", "yolo11n-LAWDS.yaml",                       # 23 # DownSample
+    #"yolo11n-ContextGuidedDown.yaml", "yolo11s-ContextGuidedDown.yaml", "yolo11m-ContextGuidedDown.yaml", "yolo11l-ContextGuidedDown.yaml", "yolo11x-ContextGuidedDown.yaml",           # 45 # DownSample
+    #"yolo11n-SPDConv.yaml", "yolo11s-SPDConv.yaml", "yolo11m-SPDConv.yaml", "yolo11l-SPDConv.yaml", "yolo11x-SPDConv.yaml",                     # 49 # DownSample
     
     ## C3k2
     #"yolo11-C3k2-Faster.yaml",                 # 7 # C3k2 # sample跑完
@@ -66,19 +71,31 @@ model_configs = [
     #"yolo11-C3k2-DBB.yaml",                    # 11 # C3k2 # sample跑完
     #"yolo11-C3k2-CloAtt.yaml",                 # 17 # C3k2 # Error-5
     #"yolo11-C3k2-SCConv.yaml",                 # 20 # C3k2 # sample跑完
-    #"yolo11-C3k2-SCcConv.yaml",                # 21 # C3k2
+    #"yolo11n-C3k2-SCcConv.yaml", "yolo11s-C3k2-SCcConv.yaml", "yolo11m-C3k2-SCcConv.yaml", "yolo11l-C3k2-SCcConv.yaml", "yolo11x-C3k2-SCcConv.yaml",                # 21 # C3k2
     #"yolo11-C3k2-EMSC.yaml",                   # 24 # C3k2 # sample跑完
     #"yolo11-C3k2-EMSCP.yaml",                  # 25 # C3k2 # sample跑完
-    #"yolo11-KernelWarehouse.yaml",             # 27 # C3k2 
-    #"yolo11-C3k2-DySnakeConv.yaml",            # 30 # C3k2
-    #"yolo11-C3k2-DCNV2.yaml",                  # 33 # C3k2 
-    #"yolo11-C3k2-DCNV3.yaml",                  # 34 # C3K2 
-    #"yolo11-C3k2-OREPA.yaml",                  # 37 # C3K2
-    #"yolo11-C3k2-REPVGGOREPA.yaml",            # 38 # C3K2
+    #"yolo11-KernelWarehouse.yaml",             # 27 # C3k2 # Error-AttributeError: 'bool' object has no attribute 'reserve'(n/s模型sample跑完)
+    #"yolo11n-C3k2-DySnakeConv.yaml", "yolo11s-C3k2-DySnakeConv.yaml", "yolo11m-C3k2-DySnakeConv.yaml", "yolo11l-C3k2-DySnakeConv.yaml", "yolo11x-C3k2-DySnakeConv.yaml",            # 30 # C3k2
+    #"yolo11-C3k2-DCNV2.yaml",                  # 33 # C3k2 # Error-Segmentation fault (core dumped)
+    #"yolo11x-C3k2-DCNV3.yaml", "yolo11l-C3k2-DCNV3.yaml", "yolo11m-C3k2-DCNV3.yaml", "yolo11s-C3k2-DCNV3.yaml", "yolo11n-C3k2-DCNV3.yaml",                  # 34 # C3K2 
+    #"yolo11x-C3k2-OREPA.yaml", "yolo11l-C3k2-OREPA.yaml", "yolo11m-C3k2-OREPA.yaml", "yolo11s-C3k2-OREPA.yaml", "yolo11n-C3k2-OREPA.yaml",                  # 37 # C3K2
+    #"yolo11x-C3k2-REPVGGOREPA.yaml", "yolo11l-C3k2-REPVGGOREPA.yaml", "yolo11m-C3k2-REPVGGOREPA.yaml", "yolo11s-C3k2-REPVGGOREPA.yaml", "yolo11n-C3k2-REPVGGOREPA.yaml",            # 38 # C3K2
     #"yolo11-C3k2-DCNV2-Dynamic.yaml",          # 42 # C3K2 # bash: 第 1 行： 29787 段错误               （核心已转储） python train.py
     #"yolo11-C3k2-ContextGuided.yaml",          # 44 # C3K2 # sample跑完
     #"yolo11-C3k2-MSBlock.yaml",                # 46 # C3K2 # sample跑完
     #"yolo11-C3k2-DLKA.yaml",                   # 47 # C3K2 # bash: 第 1 行： 228880 段错误               （核心已转储） python train.py
+    #"yolo11x-C3k2-EMBC.yaml", "yolo11l-C3k2-EMBC.yaml", "yolo11m-C3k2-EMBC.yaml", "yolo11s-C3k2-EMBC.yaml", "yolo11n-C3k2-EMBC.yaml",                   # 51 # C3K2
+    #"yolo11-C3k2-DAttention.yaml",             # 53 # C3K2 # Error-5
+    #"yolo11-CSwinTransformer.yaml",            # 54 # C3K2 # Error-5
+    #"yolo11-C3k2-Parc.yaml",                   # 56 # C3K2 # Error-5
+    #"yolo11x-C3k2-DWR.yaml", "yolo11l-C3k2-DWR.yaml", "yolo11m-C3k2-DWR.yaml", "yolo11s-C3k2-DWR.yaml", "yolo11n-C3k2-DWR.yaml",                    # 57 # C3K2
+    #"yolo11-C3k2-RFAConv.yaml",                # 58 # C3K2 # sample跑完
+    #"yolo11n-C3k2-RFCBAMConv.yaml", "yolo11s-C3k2-RFCBAMConv.yaml", "yolo11m-C3k2-RFCBAMConv.yaml", "yolo11l-C3k2-RFCBAMConv.yaml", "yolo11x-C3k2-RFCBAMConv.yaml",             # 59 # C3K2 
+    #"yolo11n-C3k2-RFCAConv.yaml", "yolo11s-C3k2-RFCAConv.yaml", "yolo11m-C3k2-RFCAConv.yaml", "yolo11l-C3k2-RFCAConv.yaml", "yolo11x-C3k2-RFCAConv.yaml",               # 60 # C3K2
+    #"yolo11-C3k2-FocusedLinearAttention.yaml", # 65 # C3K2 # Error-5
+    
+    
+
     
     ## C2PSA
     
@@ -127,7 +144,6 @@ model_configs = [
     #"yolo11-FDPN-DASI.yaml",                    # sample跑完
     #"yolo11-EIEStem.yaml",                     # sample跑完
     #"yolo11-AIFI.yaml",                     # sample跑完
-    #"yolo11-C3k2-RFAConv.yaml",                     # sample跑完
     #"yolo11-MAN.yaml",                      # sample跑完
     #"yolo11-hyper.yaml",                      # sample跑完
     #"hyper-yolo.yaml",                      # sample跑完
